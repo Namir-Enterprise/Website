@@ -1,1 +1,126 @@
 // Header
+header {
+   background-color: $dark;
+   border-bottom: solid $gray_text 1px;
+   .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+   }
+
+   .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      .logo {
+      }
+
+      .lang {
+         &-btn {
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            &__text {
+               margin-right: 5px;
+               font-family: $fontMain;
+               font-style: normal;
+               font-weight: 300;
+               font-size: 16px;
+               color: $gray;
+            }
+
+            &__arrow {
+               width: 0.82rem;
+               height: 1rem;
+               display: inline-block;
+               position: relative;
+               margin-left: 3px;
+
+               span {
+                  top: 0.5rem;
+                  position: absolute;
+                  width: 0.5rem;
+                  height: 0.05rem;
+                  background-color: #efefef;
+                  display: inline-block;
+                  transition: all 0.2s ease;
+               }
+
+               span:first-of-type {
+                  left: 0;
+                  transform: rotate(45deg);
+               }
+
+               span:last-of-type {
+                  right: 0;
+                  transform: rotate(-45deg);
+               }
+
+               &.active {
+                  span:first-of-type {
+                     transform: rotate(-45deg);
+                  }
+
+                  span:last-of-type {
+                     transform: rotate(45deg);
+                  }
+               }
+            }
+         }
+
+         .submenu {
+            position: absolute;
+            visibility: hidden;
+            z-index: -10;
+            opacity: 0;
+            padding: 5px 5px 5px 2px;
+            transform: translateY(-3em);
+            background-color: $dark;
+            transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+            &__item {
+            }
+
+            &__link {
+               font-family: $fontMain;
+               font-style: normal;
+               font-weight: 300;
+               font-size: 16px;
+               color: $gray;
+            }
+
+            &.open {
+               visibility: visible;
+               opacity: 1;
+               z-index: 1;
+               transform: translateY(0);
+               transition-delay: 0s, 0s, 0s;
+            }
+         }
+      }
+   }
+
+   .menu {
+      display: flex;
+      gap: 60px;
+
+      &__item {
+         font-weight: 300;
+         font-family: $fontMain;
+         font-style: normal;
+         font-size: 16px;
+
+         &:first-child {
+            font-weight: 700;
+         }
+      }
+
+      &__item-link {
+         color: $gray;
+      }
+   }
+
+   .burger {
+      display: none;
+   }
+}
