@@ -1,8 +1,9 @@
 const header = document.querySelector('.header');
+const first = document.querySelector('.banner')
 const headerHeight = header.offsetHeight; //variable to add margin for first element after header
 const containHide = () => header.classList.contains("header__hide")
-console.log(containHide)
 let lastScrollTop = 0;
+first.style.paddingTop = `${headerHeight}px`;;
 
 window.addEventListener('scroll', () => {
    let scrollDistance = window.scrollY;

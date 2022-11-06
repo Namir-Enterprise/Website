@@ -4,6 +4,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 $innerSidePadding + px;
+  font-family: $fontMain;
 
   // @media (max-width: $breakpoint1440) {
   //   max-width: 1280px;
@@ -28,7 +29,6 @@
 
 // Body Locked
 body {
-  height: 200vh;
   &.locked {
     overflow: hidden;
   }
