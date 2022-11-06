@@ -1,0 +1,49 @@
+.banner {
+   background-color: $dark;
+   height: 100vh;
+   &__title {
+      max-width: 980px;
+      margin: 260px 0 40px 0;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 96px;
+      line-height: 99.99%;
+      color: $gray;
+   }
+
+   &__scroll-down {
+      position: absolute;
+      right: 0;
+      transform: rotate(90deg);
+      margin-top: 120px;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      color: $gray;
+   }
+
+   &__blur {
+      position: absolute;
+      right: 0;
+      top: 0;
+   }
+
+   &__blur1 {
+      position: absolute;
+      left: 0;
+   }
+}
+
+.main-btn {
+   padding: 22px 55px;
+   display: inline-block;
+   font-style: normal;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 21px;
+   text-transform: uppercase;
+   color: $black;
+   background: $orange;
+   border: 1px solid $orange;
+   border-radius: 3px;
+}
