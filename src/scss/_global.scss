@@ -28,6 +28,7 @@
 
 // Body Locked
 body {
+  height: 200vh;
   &.locked {
     overflow: hidden;
   }
