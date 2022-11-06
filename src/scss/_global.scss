@@ -4,7 +4,6 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 $innerSidePadding + px;
-  font-family: $fontMain;
 
   // @media (max-width: $breakpoint1440) {
   //   max-width: 1280px;
@@ -32,6 +31,7 @@ body {
   &.locked {
     overflow: hidden;
   }
+  font-family: $fontMain;
 }
 
 // Animations

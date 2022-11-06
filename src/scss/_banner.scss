@@ -26,11 +26,13 @@
       position: absolute;
       right: 0;
       top: 0;
+      pointer-events: none;
    }
 
    &__blur1 {
       position: absolute;
       left: 0;
+      pointer-events: none;
    }
 }
 
