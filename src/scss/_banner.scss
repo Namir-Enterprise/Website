@@ -73,10 +73,7 @@
       right: 0;
       margin: auto;
 
-      &:first-child {
-        transform: translateX(-2px) rotateZ(45deg);
-      }
-
+      &:first-child,
       &:last-child {
         transform: translateX(-2px) rotateZ(45deg);
       }
