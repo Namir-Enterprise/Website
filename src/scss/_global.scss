@@ -28,10 +28,12 @@
 
 // Body Locked
 body {
+  font-family: $fontMain;
+  height: 3000px;
+
   &.locked {
     overflow: hidden;
   }
-  font-family: $fontMain;
 }
 
 // Animations
@@ -44,4 +46,19 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+// Button
+.main-btn {
+  display: inline-block;
+  padding: 22px 55px;
+  border: 1px solid $orange;
+  border-radius: 3px;
+  background: $orange;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: $black;
 }
