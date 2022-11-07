@@ -5,11 +5,13 @@ btnLink.addEventListener('click', (event) => {
   event.preventDefault();
   subMenu.classList.toggle('open');
   arrowBtn.classList.toggle('active');
+  btnLink.classList.toggle('open');
 });
 
 document.addEventListener('scroll', () => {
   subMenu.classList.remove('open');
   arrowBtn.classList.remove('active');
+  btnLink.classList.toggle('open');
 });
 
 document.addEventListener('click', (event) => {
@@ -17,5 +19,6 @@ document.addEventListener('click', (event) => {
   if (!withinBoundaries) {
     subMenu.classList.remove('open');
     arrowBtn.classList.remove('active');
+    btnLink.classList.toggle('open');
   }
 });

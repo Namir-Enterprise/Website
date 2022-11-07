@@ -23,7 +23,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   .logo-container {
@@ -36,10 +36,22 @@
     }
 
     .lang {
+      .open {
+        background-color: $black;
+      }
+
       &-btn {
         display: flex;
         align-items: center;
         z-index: 1;
+        padding: 12px 13px;
+        border-radius: 3px 3px 0 0;
+        transition: all 0.3s;
+
+        &:hover {
+          background-color: $gray-text;
+          border-radius: 3px;
+        }
 
         &__text {
           margin-right: 5px;
@@ -93,16 +105,21 @@
         position: absolute;
         visibility: hidden;
         opacity: 0;
-        padding: 5px 0;
-        margin: 1rem 0 0 -0.95rem;
         transform: translateY(-3em);
         background-color: $dark;
-        transition: all 0.3s ease 0s, visibility 0s linear 0.3s,
-          z-index 0s linear 0.01s;
+        transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
         z-index: -10;
+        text-align: center;
+        border-radius: 0 0 3px 3px;
 
         &__item {
-          padding: 7px 15px;
+          padding: 12px 21px;
+          border-radius: 3px;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: $gray-text;
+          }
         }
 
         &__link {
@@ -111,7 +128,6 @@
           font-weight: 300;
           font-size: 16px;
           color: $gray;
-          border-bottom: 1px solid $gray;
         }
 
         &.open {
@@ -120,6 +136,7 @@
           z-index: 1;
           transform: translateY(0);
           transition-delay: 0s, 0s, 0s;
+          background-color: $black;
         }
       }
     }
@@ -223,7 +240,7 @@
 
       &:before,
       &:after {
-        content: '';
+        content: "";
         position: absolute;
         height: 2px;
         width: 100%;
