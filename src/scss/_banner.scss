@@ -35,15 +35,57 @@
     color: $gray;
   }
 
-  &__scroll-down {
+  &__scroll {
     position: absolute;
     right: 0;
-    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-top: 120px;
+    transform: rotate(90deg);
+  }
+
+  &__scroll-down {
     font-style: normal;
     font-weight: 300;
     font-size: 18px;
     color: $gray;
+  }
+
+  &__scroll-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid $gray;
+    transition: all 0.3s;
+    position: relative;
+
+    span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-width: 1px 1px 0 0;
+      border-style: solid;
+      border-color: $gray;
+      transition: all 0.3s;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+
+      &:first-child {
+        transform: translateX(-2px) rotateZ(45deg);
+      }
+
+      &:last-child {
+        transform: translateX(-2px) rotateZ(45deg);
+      }
+    }
   }
 
   &__blur_left {
