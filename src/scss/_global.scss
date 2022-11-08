@@ -61,4 +61,10 @@ body {
   line-height: 21px;
   text-transform: uppercase;
   color: $black;
+  transition: all 0.4s;
+
+  &:hover {
+    background: transparent;
+    color: $gray;
+  }
 }
