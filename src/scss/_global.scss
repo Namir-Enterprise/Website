@@ -68,3 +68,44 @@ body {
     color: $gray;
   }
 }
+
+// Typography
+h1 {
+  font-family: $fontMain;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 96px;
+  line-height: 99.99%;
+  color: $gray;
+}
+
+h2 {
+  font-family: $fontMain;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 100%;
+  color: $gray;
+}
+
+.section-counter {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 60px;
+  font-family: $fontMain;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: $gray;
+
+  &::after {
+    content: '';
+    width: 56px;
+    height: 1px;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    background-color: $orange;
+  }
+}
