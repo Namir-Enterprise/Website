@@ -32,7 +32,7 @@
 
       &::before {
          content: "";
-         height: 100%;
+         height: calc(100% - 10px);
          width: 100%;
          margin: auto;
          position: absolute;
@@ -50,7 +50,7 @@
       &::after {
          content: "";
          height: 100%;
-         width: 100%;
+         width: calc(100% - 10px);
          margin: auto;
          position: absolute;
          display: flex;
@@ -63,6 +63,14 @@
          opacity: 0.4;
          pointer-events: none;
          transition: border-color 0.3s, opacity 0.6s;
+      }
+
+      &:nth-child(5n + 1):before {
+         border-width: 0 1px 0 0;
+      }
+
+      &:nth-child(5n + 5):before {
+         border-width: 0 0 0 1px;
       }
    }
 
