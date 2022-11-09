@@ -29,6 +29,7 @@
 // Body Locked
 body {
   font-family: $fontMain;
+  background-color: $dark;
   height: 3000px;
 
   &.locked {
@@ -93,7 +94,7 @@ h2 {
   color: $gray;
 
   &::after {
-    content: '';
+    content: "";
     width: 56px;
     height: 1px;
     position: absolute;
