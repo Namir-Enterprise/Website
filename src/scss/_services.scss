@@ -20,7 +20,6 @@
          .accordion-item {
             margin-bottom: 30px;
             border-bottom: 1px solid $light_gray_text;
-
             &.open {
                border-bottom: 1px solid $orange;
                .accordion-item {
@@ -40,6 +39,11 @@
                         transition: all 0.3s ease-in-out;
                      }
 
+                     &::before {
+                        background-color: transparent;
+                        transition: all 0.3s ease-in-out;
+                     }
+
                      &::before,
                      &::after {
                         background-color: $orange;
@@ -49,6 +53,7 @@
             }
 
             &__control {
+               margin-bottom: 20px;
                width: 100%;
                display: flex;
                justify-content: space-between;
@@ -57,7 +62,6 @@
             }
 
             &__title {
-               margin-bottom: 19px;
                font-style: normal;
                font-weight: 300;
                font-size: 32px;
