@@ -43,10 +43,10 @@
       &-btn {
         display: flex;
         align-items: center;
-        z-index: 1;
         padding: 12px 13px;
         border-radius: 3px 3px 0 0;
         transition: all 0.3s;
+        z-index: 1;
 
         &:hover {
           background-color: $gray-text;
@@ -113,21 +113,24 @@
         border-radius: 0 0 3px 3px;
 
         &__item {
-          padding: 12px 21px;
+          // padding: 12px 21px;
           border-radius: 3px;
           transition: all 0.3s;
-
-          &:hover {
-            background-color: $gray-text;
-          }
         }
 
         &__link {
+          display: inherit;
+          padding: 12px 21px;
+          background-color: $black;
           font-family: $fontMain;
           font-style: normal;
           font-weight: 300;
           font-size: 16px;
           color: $gray;
+
+          &:hover {
+            background-color: $gray-text;
+          }
         }
 
         &.open {

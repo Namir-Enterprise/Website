@@ -11,7 +11,7 @@ btnLink.addEventListener('click', (event) => {
 document.addEventListener('scroll', () => {
   subMenu.classList.remove('open');
   arrowBtn.classList.remove('active');
-  btnLink.classList.toggle('open');
+  btnLink.classList.remove('open');
 });
 
 document.addEventListener('click', (event) => {
@@ -19,6 +19,6 @@ document.addEventListener('click', (event) => {
   if (!withinBoundaries) {
     subMenu.classList.remove('open');
     arrowBtn.classList.remove('active');
-    btnLink.classList.toggle('open');
+    btnLink.classList.remove('open');
   }
 });
