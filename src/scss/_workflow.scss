@@ -1,0 +1,262 @@
+.workflow {
+  background-color: $dark;
+
+  .inner {
+    padding: 180px 40px;
+  }
+
+  .navigation {
+    position: relative;
+    width: 2px;
+    height: 576px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: rgba(218, 218, 218, 0.7);
+    z-index: 5;
+
+    @media (max-width: 768px) {
+      display: block;
+      background: none;
+      width: 100%;
+      height: inherit;
+    }
+  }
+  .navigation ul {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+  .navigation ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    height: 96px;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      display: block;
+      height: inherit;
+      margin: 0;
+      margin-right: 25px;
+    }
+  }
+
+  .navigation ul li div {
+    position: absolute;
+    left: 66px;
+    font-family: $fontMain;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: $gray;
+    white-space: nowrap; // dont wrap text
+
+    @media (max-width: 768px) {
+      position: relative;
+      left: inherit;
+      white-space: wrap;
+    }
+  }
+
+  .navigation ul li .text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(0px);
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #0c0c0c;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  .navigation ul li.active .text {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 1.6s;
+  }
+  .indicator {
+    position: absolute;
+    top: 0;
+    width: 96px;
+    height: 96px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    transition: 0.5s;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    &::after {
+      content: '';
+      width: 90px;
+      // width: 0px;
+      height: 5px;
+      position: absolute;
+      left: 90px;
+      top: 50%;
+      transform: translateY(50%);
+      background-color: $gray;
+    }
+  }
+
+  @keyframes moves {
+    0% {
+      width: 90px;
+    }
+
+    50% {
+      width: 0;
+    }
+
+    100% {
+      width: 90px;
+    }
+  }
+
+  .navigation ul li.active ~ .indicator {
+    transform: translateY(calc(96px * 0)) scale(0.4);
+    &::after {
+      animation: moves 1s;
+    }
+  }
+  /* Indicator Transitions */
+  .navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateY(calc(96px * 0)) scale(0.4);
+  }
+  .navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateY(calc(96px * 1)) scale(0.4);
+  }
+  .navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateY(calc(96px * 2)) scale(0.4);
+  }
+  .navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateY(calc(96px * 3)) scale(0.4);
+  }
+  .navigation ul li:nth-child(5).active ~ .indicator {
+    transform: translateY(calc(96px * 4)) scale(0.4);
+  }
+  .navigation ul li:nth-child(6).active ~ .indicator {
+    transform: translateY(calc(96px * 5)) scale(0.4);
+  }
+
+  .tabs {
+    display: flex;
+    width: 100%;
+    margin-top: 55px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
+    &__header {
+      display: flex;
+      row-gap: 60px;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 400px;
+      width: 100%;
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+        max-width: inherit;
+      }
+
+      &-item {
+        margin: 0 25px;
+        cursor: pointer;
+
+        &.active {
+          color: red;
+        }
+      }
+    }
+
+    &__content {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      // background: rgb(180, 180, 180);
+
+      &-item {
+        position: relative;
+        z-index: 2;
+
+        &::before {
+          content: url(../img/workflow/blur-workflow.svg);
+          position: absolute;
+          top: -60%;
+          left: -50%;
+          z-index: -1;
+        }
+      }
+
+      &-container-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -100px;
+        width: 100%;
+        max-width: 155px;
+        height: 100%;
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: #1d1d1f;
+      }
+
+      &-wrapper {
+        width: 100%;
+        max-width: 600px;
+        background: $gray;
+        padding: 40px 60px 40px 85px;
+        border-radius: 10px;
+      }
+
+      &-title {
+        margin-bottom: 20px;
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: $black;
+      }
+
+      &-text {
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 145%;
+        color: $black;
+
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+}
