@@ -14,6 +14,7 @@
     align-items: center;
     border-radius: 10px;
     background: rgba(218, 218, 218, 0.7);
+    z-index: 5;
 
     @media (max-width: 768px) {
       display: block;
@@ -38,7 +39,6 @@
     align-items: center;
     justify-content: center;
     list-style: none;
-    // width: 70px;
     height: 96px;
     z-index: 1;
 
@@ -196,8 +196,67 @@
       width: 100%;
       justify-content: center;
       align-items: center;
-      font-size: 75px;
-      background: rgb(180, 180, 180);
+      // background: rgb(180, 180, 180);
+
+      &-item {
+        position: relative;
+        z-index: 2;
+
+        &::before {
+          content: url(../img/workflow/blur-workflow.svg);
+          position: absolute;
+          top: -60%;
+          left: -50%;
+          z-index: -1;
+        }
+      }
+
+      &-container-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -100px;
+        width: 100%;
+        max-width: 155px;
+        height: 100%;
+        max-height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        background: #1d1d1f;
+      }
+
+      &-wrapper {
+        width: 100%;
+        max-width: 600px;
+        background: $gray;
+        padding: 40px 60px 40px 85px;
+        border-radius: 10px;
+      }
+
+      &-title {
+        margin-bottom: 20px;
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: $black;
+      }
+
+      &-text {
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 145%;
+        color: $black;
+
+        &:not(:last-child) {
+          margin-bottom: 25px;
+        }
+      }
     }
   }
 }
