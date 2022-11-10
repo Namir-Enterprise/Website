@@ -129,8 +129,12 @@
           &:hover {
             background-color: $gray-text;
           }
-        }
+          transition: all 0.3s;
 
+          &:hover {
+            background-color: $gray-text;
+          }
+        }
         &.open {
           visibility: visible;
           opacity: 1;

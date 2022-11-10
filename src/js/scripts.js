@@ -2,3 +2,5 @@
 @@include('dropdown.js');
 @@include('burger-menu.js')
 @@include('header-scroll.js')
+@@include('accordion.js')
+
