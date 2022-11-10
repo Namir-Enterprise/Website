@@ -3,7 +3,7 @@
         <div class="text-info">
             <div class="text-info__company">
                 <ul class="text-info__list">
-                    <li><a href = "#" class="text-info__item_title">Company</a></li>
+                    <li class="text-info__item_title">Company</li>
                     <li><a href = "#" class="text-info__item">About us</a></li>
                     <li><a href = "#" class="text-info__item">Services</a></li>
                     <li><a href = "#" class="text-info__item">Our technologies</a></li>
@@ -14,10 +14,10 @@
             </div>
             <div class="text-info__contacts">
                 <ul class="text-info__list">
-                    <li><a class="text-info__item_title">Contacts</a></li>
-                    <li><a class="text-info__item">+380 (98) 112 34 56</a></li>
-                    <li><a class="text-info__item">+380 (98) 112 34 56</a></li>
-                    <li><a class="text-info__item">namir.dev@gmail.com</a></li>
+                    <li class="text-info__item_title">Contacts</li>
+                    <li><a href = "tel:+380981123456" class="text-info__item">+380 (98) 112 34 56</a></li>
+                    <li><a href = "tel:+380981123456" class="text-info__item">+380 (98) 112 34 56</a></li>
+                    <li><a href = "mailto:namir.dev@gmail.com" class="text-info__item">namir.dev@gmail.com</a></li>
                     <a href="#" class="text-info__icon"><img src="../img/behance.svg" alt="behance" class="text-info__img"></a>
                     <a href="#" class="text-info__icon"><img src="../img/django.svg" alt="django" class="text-info__img"></a>
                     <a href="#" class="text-info__icon"><img src="../img/telegram.svg" alt="telegram" class="text-info__img"></a>
@@ -25,15 +25,17 @@
             </div>
         </div>
         <div class="logo-block">
-            <img src="../img/logo.svg" alt="logo" class="logo-block__logo">
+            <a href="#" class="logo-block__logo-link">
+                <img src="../img/logo.svg" alt="logo" class="logo-block__logo">
+            </a>
             <div class="logo-block__lang">
                 <a href="#" class="logo-block__lang-btn">En</a>
                 <a href="#" class="logo-block__lang-btn">Ukr</a>
                 <a href="#" class="logo-block__lang-btn">Pl</a>
             </div>
-            <span class="logo-block__rights">
+            <small class="logo-block__rights">
                 Namir Enterprise 2022 All rights reserved
-            </span>
+            </small>
         </div>
     </div>
 </footer>
