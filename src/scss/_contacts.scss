@@ -16,6 +16,7 @@
       display: flex;
       gap: 30px;
       &__title {
+         display: block;
          margin-bottom: 20px;
          font-style: normal;
          font-weight: 400;
@@ -31,7 +32,7 @@
       }
    }
 
-   .flex-wrapper {
+   &__whole-content {
       display: flex;
       gap: 200px;
    }
