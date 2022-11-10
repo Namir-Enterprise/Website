@@ -1,12 +1,13 @@
 // Header
 .header {
-  background-color: $dark;
-  border-bottom: solid $gray_text 1px;
+  height: 49px;
+  width: 100%;
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
-  height: 49px;
+  border-bottom: solid $gray_text 1px;
+  backdrop-filter: blur(10px);
+  background: rgba(12, 12, 12, 0.75);
   transition: transform 0.2s linear;
   // Delay on Show header
   transition-delay: 0.7s;
@@ -36,17 +37,21 @@
     }
 
     .lang {
-      .open {
-        background-color: $black;
-      }
-
       &-btn {
         display: flex;
         align-items: center;
+        padding: 12px 13px;
+        border-radius: 3px 3px 0 0;
+        transition: all 0.3s;
         z-index: 1;
         padding: 12px 13px;
         border-radius: 3px 3px 0 0;
         transition: all 0.3s;
+
+        &:hover {
+          background-color: $gray-text;
+          border-radius: 3px;
+        }
 
         &:hover {
           background-color: $gray-text;
@@ -105,29 +110,29 @@
         position: absolute;
         visibility: hidden;
         opacity: 0;
+        padding: 5px 0;
+        margin: 1rem 0 0 -0.95rem;
         transform: translateY(-3em);
         background-color: $dark;
-        transition: all 0.3s ease 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+        transition: all 0.3s ease 0s, visibility 0s linear 0.3s,
+          z-index 0s linear 0.01s;
         z-index: -10;
-        text-align: center;
-        border-radius: 0 0 3px 3px;
 
         &__item {
-          padding: 12px 21px;
-          border-radius: 3px;
-          transition: all 0.3s;
-
-          &:hover {
-            background-color: $gray-text;
-          }
+          padding: 7px 15px;
         }
 
         &__link {
+          display: inherit;
+          padding: 12px 21px;
+          background-color: $black;
+          border-radius: 3px;
           font-family: $fontMain;
           font-style: normal;
           font-weight: 300;
           font-size: 16px;
           color: $gray;
+          border-bottom: 1px solid $gray;
         }
 
         &.open {
@@ -136,7 +141,6 @@
           z-index: 1;
           transform: translateY(0);
           transition-delay: 0s, 0s, 0s;
-          background-color: $black;
         }
       }
     }
@@ -240,7 +244,7 @@
 
       &:before,
       &:after {
-        content: "";
+        content: '';
         position: absolute;
         height: 2px;
         width: 100%;
