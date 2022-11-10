@@ -5,23 +5,23 @@
   margin: 0 auto;
   padding: 0 $innerSidePadding + px;
 
-  // @media (max-width: $breakpoint1440) {
+  // @media (max-width: $bp1440) {
   //   max-width: 1280px;
   // }
 
-  // @media (max-width: $breakpoint1235) {
+  // @media (max-width: $bp1235) {
   //   max-width: 1020px;
   // }
 
-  // @media (max-width: $breakpoint1024) {
+  // @media (max-width: $bp1024) {
   //   max-width: 980px;
   // }
 
-  // @media (max-width: $breakpoint768) {
+  // @media (max-width: $bp768) {
   //   max-width: 688px;
   // }
 
-  // @media (max-width: $breakpoint600) {
+  // @media (max-width: $bp600) {
   //   max-width: none;
   // }
 }
@@ -33,18 +33,6 @@ body {
 
   &.locked {
     overflow: hidden;
-  }
-}
-
-// Animations
-// Fade
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 
@@ -118,6 +106,7 @@ body {
   }
 }
 
+// Animations
 @keyframes move1 {
   0% {
     height: 100%;
@@ -217,7 +206,7 @@ h2 {
   color: $gray;
 
   &::after {
-    content: "";
+    content: '';
     width: 56px;
     height: 1px;
     position: absolute;

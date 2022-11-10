@@ -32,7 +32,7 @@
     align-items: center;
     gap: 40px;
 
-    @media (max-width: $breakpoint880) {
+    @media (max-width: $bp880) {
       gap: 20px;
     }
 
@@ -129,12 +129,8 @@
           &:hover {
             background-color: $gray-text;
           }
-          transition: all 0.3s;
-
-          &:hover {
-            background-color: $gray-text;
-          }
         }
+
         &.open {
           visibility: visible;
           opacity: 1;
@@ -179,7 +175,7 @@
       }
     }
 
-    @media (max-width: $breakpoint991) {
+    @media (max-width: $bp991) {
       gap: 30px;
     }
   }
