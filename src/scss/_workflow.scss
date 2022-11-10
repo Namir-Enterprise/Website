@@ -14,12 +14,23 @@
     align-items: center;
     border-radius: 10px;
     background: rgba(218, 218, 218, 0.7);
+
+    @media (max-width: 768px) {
+      display: block;
+      background: none;
+      width: 100%;
+      height: inherit;
+    }
   }
   .navigation ul {
     display: flex;
     align-items: center;
     flex-direction: column;
-    // width: 350px;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
   }
   .navigation ul li {
     position: relative;
@@ -30,7 +41,13 @@
     // width: 70px;
     height: 96px;
     z-index: 1;
-    // background: #1634aca6;
+
+    @media (max-width: 768px) {
+      display: block;
+      height: inherit;
+      margin: 0;
+      margin-right: 25px;
+    }
   }
 
   .navigation ul li div {
@@ -43,6 +60,12 @@
     line-height: 38px;
     color: $gray;
     white-space: nowrap; // dont wrap text
+
+    @media (max-width: 768px) {
+      position: relative;
+      left: inherit;
+      white-space: wrap;
+    }
   }
 
   .navigation ul li .text {
@@ -59,6 +82,10 @@
     font-size: 20px;
     line-height: 24px;
     color: #0c0c0c;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .navigation ul li.active .text {
     opacity: 1;
@@ -73,6 +100,10 @@
     background: #d9d9d9;
     border-radius: 50%;
     transition: 0.5s;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     &::after {
       content: '';
@@ -132,6 +163,10 @@
     width: 100%;
     margin-top: 55px;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     &__header {
       display: flex;
       row-gap: 60px;
@@ -142,7 +177,10 @@
 
       @media (max-width: 768px) {
         flex-wrap: wrap;
+        flex-direction: row;
+        max-width: inherit;
       }
+
       &-item {
         margin: 0 25px;
         cursor: pointer;

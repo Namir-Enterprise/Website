@@ -3,6 +3,7 @@ function burgerMenu() {
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
   const body = document.querySelector('body');
+
   burger.addEventListener('click', () => {
     if (!menu.classList.contains('active')) {
       menu.classList.add('active');
@@ -14,6 +15,7 @@ function burgerMenu() {
       body.classList.remove('locked');
     }
   });
+
   // breakpoint for navbar
   window.addEventListener('resize', () => {
     if (window.innerWidth > 991.98) {
