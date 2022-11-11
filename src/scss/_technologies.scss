@@ -9,7 +9,7 @@
     grid-template-rows: repeat(3, 180px);
     justify-content: center;
 
-    @media (max-width: $bp425) {
+    @media (max-width: $bp428) {
       grid-template-columns: repeat(3, 126px);
       grid-template-rows: repeat(auto-fill, 90px);
     }
@@ -36,7 +36,7 @@
     }
 
     &::before {
-      content: '';
+      content: "";
       width: 100%;
       height: calc(100% - 10px);
       margin: auto;
@@ -53,7 +53,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       height: 100%;
       width: calc(100% - 10px);
       margin: auto;
@@ -78,7 +78,7 @@
       border-width: 0 0 0 1px;
     }
 
-    @media (max-width: $bp425) {
+    @media (max-width: $bp428) {
       &:nth-child(3n + 1):before {
         border-width: 0 1px 0 0;
       }
