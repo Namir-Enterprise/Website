@@ -1,3 +1,4 @@
+// Tabs
 function tabs(
   headerSelector,
   tabSelector,
@@ -8,20 +9,28 @@ function tabs(
   const header = document.querySelector(headerSelector),
     tab = document.querySelectorAll(tabSelector),
     content = document.querySelectorAll(contentSelector);
+
   function hideTabContent() {
     content.forEach((item) => {
       item.style.display = 'none';
     });
+
     tab.forEach((item) => {
       item.classList.remove(activeClass);
     });
   }
+
   function showTabContent(i = 0) {
     content[i].style.display = display;
     tab[i].classList.add(activeClass);
+    content.forEach((item) => {
+      item.style.animation = 'showContent 0.7s forwards';
+    });
   }
+
   hideTabContent();
   showTabContent();
+
   header.addEventListener('click', (e) => {
     const target = e.target;
     if (
@@ -38,8 +47,8 @@ function tabs(
   });
 }
 
-// ПЕРВЫЙ аргумент - класс всего нашего хедера табов.
-// ВТОРОЙ аргумент - класс конкретного элемента, при клике на который будет переключатся таб.
-// ТРЕТИЙ аргумент - класс того блока, который будет переключаться.
-// ЧЕТВЕРТЫЙ аргумент - класс активности, который будет добавлятся для таба, который сейчас активен.
+// FIRST argument is the class of our entire tab header.
+// SECOND argument is the class of a specific element, when clicked, the tab will switch.
+// THIRD argument is the class of the block that will be switched.
+// FOURTH argument is the activity class that will be added for the currently active tab.
 tabs('.tabs__header', '.tabs__header-item', '.tabs__content-item', 'active');

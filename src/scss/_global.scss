@@ -5,25 +5,9 @@
   margin: 0 auto;
   padding: 0 $innerSidePadding + px;
 
-  // @media (max-width: $bp1440) {
-  //   max-width: 1280px;
-  // }
-
-  // @media (max-width: $bp1235) {
-  //   max-width: 1020px;
-  // }
-
-  // @media (max-width: $bp1024) {
-  //   max-width: 980px;
-  // }
-
-  // @media (max-width: $bp768) {
-  //   max-width: 688px;
-  // }
-
-  // @media (max-width: $bp600) {
-  //   max-width: none;
-  // }
+  @media (max-width: $bp428) {
+    padding: 0 30px;
+  }
 }
 
 // Body Locked

@@ -4,42 +4,47 @@
         <h2 class="workflow__title">Воркфлоу</h2>
         <!-- Tabs -->
         <div class="tabs">
+            <picture>
+                <source media="(max-width: 600px)" srcset="../img/workflow/blur-workflow-mobile.svg">
+                <img class="tabs__background-blur" src="../img/workflow/blur-workflow.svg" loading="lazy"
+                    alt="backgroung-decoration">
+            </picture>
             <div class="tabs__header">
-                <div class="navigation">
-                    <ul>
-                        <li class="tabs__header-item list active">
-                            <span class="text">1</span>
-                            <div>Аналіз</div>
+                <div class="tabs__header-navigation">
+                    <ul class="tabs__header-list">
+                        <li class="tabs__header-item list__item active">
+                            <span class="tabs__header-number">1</span>
+                            <h3 class="tabs__header-caption">Аналіз</h3>
                         </li>
-                        <li class="tabs__header-item list">
-                            <span class="text">2</span>
-                            <div>Проектування</div>
+                        <li class="tabs__header-item list__item">
+                            <span class="tabs__header-number">2</span>
+                            <h3 class="tabs__header-caption">Проектування</h3>
                         </li>
                         </li>
-                        <li class="tabs__header-item list">
-                            <span class="text">3</span>
-                            <div>Дизайн</div>
+                        <li class="tabs__header-item list__item">
+                            <span class="tabs__header-number">3</span>
+                            <h3 class="tabs__header-caption">Дизайн</h3>
                         </li>
-                        <li class="tabs__header-item list">
-                            <span class="text">4</span>
-                            <div>Розробка</div>
+                        <li class="tabs__header-item list__item">
+                            <span class="tabs__header-number">4</span>
+                            <h3 class="tabs__header-caption">Розробка</h3>
                         </li>
-                        <li class="tabs__header-item list">
-                            <span class="text">5</span>
-                            <div>Тестування</div>
+                        <li class="tabs__header-item list__item">
+                            <span class="tabs__header-number">5</span>
+                            <h3 class="tabs__header-caption">Тестування</h3>
                         </li>
-                        <li class="tabs__header-item list">
-                            <span class="text">6</span>
-                            <div>Запуск та підтримка</div>
+                        <li class="tabs__header-item list__item">
+                            <span class="tabs__header-number">6</span>
+                            <h3 class="tabs__header-caption">Запуск та підтримка</h3>
                         </li>
-                        <div class="indicator"></div>
+                        <div class="tabs__header-indicator"></div>
                     </ul>
                 </div>
             </div>
             <div class="tabs__content">
                 <div class="tabs__content-item">
                     <div class="tabs__content-container-icon">
-                        <img src="../img/workflow/analysis.svg" alt="analysis">
+                        <img src="../img/workflow/analysis.svg" loading="lazy" alt="analysis">
                     </div>
                     <div class="tabs__content-wrapper">
                         <strong class="tabs__content-title">Аналіз</strong>
@@ -52,11 +57,78 @@
                             їх систематизацію, документування, аналіз, а також виявлення та вирішення протиріч.</p>
                     </div>
                 </div>
-                <div class="tabs__content-item">2</div>
-                <div class="tabs__content-item">3</div>
-                <div class="tabs__content-item">4</div>
-                <div class="tabs__content-item">5</div>
-                <div class="tabs__content-item">6</div>
+                <div class="tabs__content-item">
+                    <div class="tabs__content-container-icon">
+                        <img src="../img/workflow/planinng.svg" loading="lazy" alt="planinng">
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <strong class="tabs__content-title">Проектування</strong>
+                        <p class="tabs__content-text">На стадії проектування (яка також називається стадією дизайну та
+                            архітектури) програмісти та системні архітектори, керуючись вимогами, розробляють
+                            високорівневий дизайн системи.</p>
+                        <p class="tabs__content-text">
+                            Основі способи візуалізації під час проектування: </p>
+                        <ul class="tabs__content-list">
+                            <li>Блок-схеми;</li>
+                            <li>ER-діаграми;</li>
+                            <li>UML-діаграми;</li>
+                            <li>Макети</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tabs__content-item">
+                    <div class="tabs__content-container-icon">
+                        <img src="../img/workflow/designing.svg" loading="lazy" alt="designing">
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <strong class="tabs__content-title">Дизайн</strong>
+                        <p class="tabs__content-text">Розробка та візуалізація UX (user experience) та інформаційної
+                            архітектури, створення CJM та навігаційних діаграм. На цьому етапі створюється прототип та
+                            після його затвердження починається детальна робота над UI (user interface). Також, за
+                            потреби розробляється дизайн система, брендбук або Style-guide.</p>
+                        <p class="tabs__content-text">Результатом етапу дизайну є завершений та прототипований макет
+                            продукту</p>
+                    </div>
+                </div>
+                <div class="tabs__content-item">
+                    <div class="tabs__content-container-icon">
+                        <img src="../img/workflow/development.svg" loading="lazy" alt="development">
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <strong class="tabs__content-title">Розробка</strong>
+                        <p class="tabs__content-text">Після того як вимоги і дизайн продукту затверджені, відбувається
+                            перехід до наступної стадії життєвого циклу – безпосередньої розробки.</p>
+                        <p class="tabs__content-text">Розробка та супроводження проектів відбувається по Agile
+                            методології</p>
+                    </div>
+                </div>
+                <div class="tabs__content-item">
+                    <div class="tabs__content-container-icon">
+                        <img src="../img/workflow/testing.svg" loading="lazy" alt="testing">
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <strong class="tabs__content-title">Тестування</strong>
+                        <p class="tabs__content-text">У фазі тестування виявляються пропущені при розробці баги. При
+                            виявленні дефекту, тестувальник складає звіт про помилку, який передається розробникам.
+                            Останні його виправляють, після чого тестування повторюється – але цього разу для того, щоб
+                            переконатися, що проблема була виправлена, і саме виправлення не стало причиною появи нових
+                            дефектів в продукті.</p>
+                    </div>
+                </div>
+                <div class="tabs__content-item">
+                    <div class="tabs__content-container-icon">
+                        <img src="../img/workflow/launch-support.svg" loading="lazy" alt="Launch & support">
+                    </div>
+                    <div class="tabs__content-wrapper">
+                        <strong class="tabs__content-title">Запуск та підтримка</strong>
+                        <p class="tabs__content-text">Коли програма протестована і в ній більше не залишилося серйозних
+                            дефектів, приходить час релізу і передачі її кінцевим користувачам. Після випуску нової
+                            версії програми в роботу включається відділ технічної підтримки. </p>
+                        <p class="tabs__content-text">У разі виявлення користувачами тих чи інших пост-релізних багів,
+                            інформація про них передається у вигляді звітів про помилки команді розробки, яка випускає
+                            виправлення.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

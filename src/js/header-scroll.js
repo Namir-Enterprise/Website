@@ -1,3 +1,4 @@
+// Header scroll
 const header = document.querySelector('.header');
 const first = document.querySelector('.banner');
 const headerHeight = header.offsetHeight; //variable to add margin for first element after header
