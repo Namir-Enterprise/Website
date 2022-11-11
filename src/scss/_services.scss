@@ -1,5 +1,4 @@
 .services {
-   margin-top: 180px;
    .inner {
       position: relative;
       &::before {
@@ -12,9 +11,17 @@
    }
 
    &__wrapper {
-      margin-top: 75px;
       display: flex;
       gap: 235px;
+
+      @media (max-width: $bp1235) {
+         gap: 140px;
+      }
+
+      @media (max-width: $bp991) {
+         flex-wrap: wrap;
+         gap: 50px;
+      }
 
       .accordion {
          .accordion-item {

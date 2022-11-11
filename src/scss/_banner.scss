@@ -28,6 +28,10 @@
   &__title {
     max-width: 980px;
     margin: 260px 0 40px 0;
+
+    @media (max-width: $bp1100) {
+      font-size: 80px;
+    }
   }
 
   &__scroll {

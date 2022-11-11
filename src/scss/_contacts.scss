@@ -37,5 +37,12 @@
   &__whole-content {
     display: flex;
     gap: 200px;
+
+    @media (max-width: $bp1100) {
+      gap: 70px;
+    }
+    @media (max-width: $bp991) {
+      flex-wrap: wrap;
+    }
   }
 }
