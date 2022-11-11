@@ -7,6 +7,10 @@
          left: -33%;
          top: 15%;
          z-index: -1;
+
+         @media (max-width: $bp991) {
+            content: " ";
+         }
       }
    }
 
@@ -17,7 +21,6 @@
       @media (max-width: $bp1235) {
          gap: 140px;
       }
-
       @media (max-width: $bp991) {
          flex-wrap: wrap;
          gap: 50px;
@@ -72,6 +75,14 @@
                font-weight: 300;
                font-size: 32px;
                color: $light_gray_text;
+               text-align: left;
+
+               @media (max-width: $bp700) {
+                  font-size: 26px;
+               }
+               @media (max-width: $bp600) {
+                  font-size: 21px;
+               }
             }
 
             &__icon {
@@ -79,6 +90,8 @@
                display: inline-block;
                width: 30px;
                height: 30px;
+               padding-left: 30px;
+               margin-left: 10px;
 
                &::before {
                   content: "";
@@ -117,10 +130,10 @@
                transition: all 0.3s ease-out;
                box-sizing: content-box;
 
-               // @include mobile {
-               //    line-height: 170%;
-               //    font-size: 16px;
-               // }
+               @media (max-width: $bp480) {
+                  line-height: 145%;
+                  font-size: 16px;
+               }
             }
          }
       }

@@ -1,5 +1,5 @@
 .banner {
-  background-color: $dark;
+  margin-bottom: 100px;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -66,7 +66,6 @@
     }
     @media (max-width: $bp480) {
       max-width: 270px;
-      margin-top: 55px;
       font-size: 48px;
       line-height: 139.99%;
     }
@@ -83,6 +82,9 @@
 
     @media (max-width: $bp880) {
       margin-top: 165px;
+    }
+    @media (max-width: $bp768) {
+      right: -25px;
     }
   }
 
