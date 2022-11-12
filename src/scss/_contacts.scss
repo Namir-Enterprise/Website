@@ -5,18 +5,30 @@
   &__title {
     color: $black;
     margin-bottom: 60px;
+
+    @media (max-width: $bp480) {
+      margin-bottom: 25px;
+    }
   }
 
   &__btn {
     background-color: transparent;
     border: 3px solid #fd6807;
     border-radius: 3px;
+
+    @media (max-width: $bp480) {
+      font-size: 16px;
+      padding: 13px 22px;
+    }
+    @media (max-width: $bp365) {
+      font-size: 14px;
+      padding: 10px 12px;
+    }
   }
 
   .content {
     display: flex;
     gap: 30px;
-
     &__title {
       display: block;
       margin-bottom: 20px;
@@ -24,6 +36,11 @@
       font-weight: 400;
       font-size: 32px;
       color: $black;
+
+      @media (max-width: $bp480) {
+        margin-bottom: 13px;
+        font-size: 18px;
+      }
     }
 
     &__text {
@@ -31,6 +48,13 @@
       font-weight: 300;
       font-size: 20px;
       color: $black;
+
+      @media (max-width: $bp480) {
+        font-size: 16px;
+      }
+    }
+    @media (max-width: $bp428) {
+      flex-wrap: wrap;
     }
   }
 
@@ -44,5 +68,13 @@
     @media (max-width: $bp991) {
       flex-wrap: wrap;
     }
+    @media (max-width: $bp480) {
+      gap: 30px;
+    }
+  }
+
+  @media (max-width: $bp480) {
+    flex-wrap: wrap;
+    padding: 35px 0 27px 0;
   }
 }
