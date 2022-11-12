@@ -23,7 +23,7 @@
       }
       @media (max-width: $bp991) {
          flex-wrap: wrap;
-         gap: 50px;
+         gap: 40px;
       }
 
       .accordion {
@@ -68,6 +68,9 @@
                justify-content: space-between;
                align-items: center;
                background-color: transparent;
+
+               @media (max-width: $bp480) {
+               }
             }
 
             &__title {
@@ -77,11 +80,11 @@
                color: $light_gray_text;
                text-align: left;
 
-               @media (max-width: $bp700) {
-                  font-size: 26px;
+               @media (max-width: $bp768) {
+                  font-size: 25px;
                }
-               @media (max-width: $bp600) {
-                  font-size: 21px;
+               @media (max-width: $bp480) {
+                  font-size: 20px;
                }
             }
 
@@ -134,6 +137,10 @@
                   line-height: 145%;
                   font-size: 16px;
                }
+            }
+
+            @media (max-width: $bp480) {
+               margin-bottom: 20px;
             }
          }
       }

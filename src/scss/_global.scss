@@ -196,6 +196,10 @@ h2 {
   font-size: 48px;
   line-height: 100%;
   color: $gray;
+
+  @media (max-width: $bp480) {
+    font-size: 28px;
+  }
 }
 
 .section-counter {
