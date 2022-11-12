@@ -1,4 +1,10 @@
 .portfolio {
+   margin-bottom: 95px;
+
+   @media (max-width: $bp1360) {
+      margin-bottom: 80px;
+   }
+
    &__title {
       margin-bottom: 40px;
 
