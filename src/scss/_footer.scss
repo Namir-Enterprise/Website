@@ -14,6 +14,7 @@
 
     .text-info {
       display: flex;
+      flex-wrap: wrap;
       gap: 300px;
       margin-right: 150px;
 
@@ -55,6 +56,10 @@
 
       @media (max-width: $bp991) {
         gap: 85px;
+      }
+
+      @media (max-width: 549px) {
+        gap: 40px;
       }
     }
 
