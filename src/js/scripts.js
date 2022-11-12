@@ -5,3 +5,4 @@
 @@include('accordion.js')
 @@include('tabs.js')
 @@include('indicator.js')
+@@include('select.js')
