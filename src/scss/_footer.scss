@@ -10,6 +10,7 @@
     .text-info {
       display: flex;
       gap: 300px;
+      margin-right: 150px;
 
       li {
         &:not(:last-child) {
@@ -46,6 +47,10 @@
           transform: scale(1.15);
         }
       }
+
+      @media (max-width: $bp991) {
+        gap: 85px;
+      }
     }
 
     .logo-block {
@@ -55,10 +60,19 @@
         display: block;
         width: 100px;
         margin: 0px 0px 15px auto;
+
+        @media (max-width: 708px) {
+          margin: 40px 0px 15px 0;
+        }
       }
 
       &__lang {
         text-align: right;
+
+        @media (max-width: 708px) {
+          margin-bottom: 40px;
+          text-align: left;
+        }
       }
 
       &__lang-btn {
@@ -88,7 +102,16 @@
         font-size: 16px;
         text-align: right;
         color: $light_gray_text;
+
+        @media (max-width: 708px) {
+          position: relative;
+          text-align: left;
+        }
       }
+    }
+
+    @media (max-width: $bp768) {
+      flex-wrap: wrap;
     }
   }
 }
