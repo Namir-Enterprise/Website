@@ -168,6 +168,25 @@ h1 {
   font-size: 96px;
   line-height: 99.99%;
   color: $gray;
+
+  max-width: 980px;
+
+  @media (max-width: $bp1100) {
+    font-size: 80px;
+  }
+  @media (max-width: $bp880) {
+    max-width: 529px;
+    margin: 0px auto 40px;
+    text-align: center;
+  }
+  @media (max-width: $bp700) {
+    font-size: 65px;
+  }
+  @media (max-width: $bp480) {
+    max-width: 270px;
+    font-size: 38px;
+    line-height: 139.99%;
+  }
 }
 
 h2 {
