@@ -16,7 +16,7 @@
   }
 
   &__item {
-    padding: 55px 40px;
+    padding: 62px 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,7 +70,7 @@
       transition: border-color 0.3s, opacity 0.6s;
     }
 
-    @media (min-width: 1356px) {
+    @media (min-width: 1355px) {
       &:nth-child(5n + 1):before {
         border-width: 0 1px 0 0;
       }
@@ -79,7 +79,7 @@
         border-width: 0 0 0 1px;
       }
     }
-    @media (max-width: 1355px) {
+    @media (max-width: 1354px) {
       &:nth-child(4n + 1):before {
         border-width: 0 1px 0 0;
       }
@@ -88,7 +88,7 @@
         border-width: 0 0 0 1px;
       }
     }
-    @media (max-width: $bp1100) {
+    @media (max-width: 1099px) {
       &:nth-child(3n + 1):before {
         border-width: 0 1px 0 0;
       }
