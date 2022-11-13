@@ -6,3 +6,4 @@
 @@include('tabs.js')
 @@include('indicator.js')
 @@include('select.js')
+@@include('./libs/phonemask(lib).js')

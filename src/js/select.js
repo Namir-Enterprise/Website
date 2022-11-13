@@ -1,18 +1,18 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
-    let text = placeholder ?? 'placeholder не указан'
+  let text = placeholder ?? 'placeholder не указан';
 
-    const items = data.map(item => {
-        let cls = ''
-        if (item.id === selectedId) {
-            text = item.value
-            cls = 'selected'
-        }
-        return `
-            <li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
-        `
-    })
+  const items = data.map((item) => {
+    let cls = '';
+    if (item.id === selectedId) {
+      text = item.value;
+      cls = 'selected';
+    }
     return `
-        <input type="hidden" class="hidden__input">
+            <li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
+        `;
+  });
+  return `
+        <input type="hidden" name="site-type" class="hidden__input">
         <div class="select__backdrop" data-type="backdrop"></div>
         <div class="select__input" data-type="input">
             <span data-type="value">${text}</span>
@@ -23,99 +23,96 @@ const getTemplate = (data = [], placeholder, selectedId) => {
                 ${items.join('')}
             </ul>
         </div>
-    `
-}
+    `;
+};
 class Select {
-    constructor(selector, options) {
-        this.$el = document.querySelector(selector)
-        this.options = options
-        this.selectedId = options.selectedId
+  constructor(selector, options) {
+    this.$el = document.querySelector(selector);
+    this.options = options;
+    this.selectedId = options.selectedId;
 
-        this.render()
-        this.setup()
+    this.render();
+    this.setup();
+  }
+
+  render() {
+    const { placeholder, data } = this.options;
+    this.$el.classList.add('select');
+    this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
+  }
+  setup() {
+    this.clickHandler = this.clickHandler.bind(this);
+    this.$el.addEventListener('click', this.clickHandler);
+    this.$arrow = this.$el.querySelector('[data-type="arrow"]');
+    this.$value = this.$el.querySelector('[data-type="value"]');
+  }
+
+  clickHandler(event) {
+    const { type } = event.target.dataset;
+    if (type === 'input') {
+      this.toggle();
+    } else if (type === 'item') {
+      const id = event.target.dataset.id;
+      this.select(id);
+    } else if (type === 'backdrop') {
+      this.close();
     }
+  }
 
-    render() {
-        const { placeholder, data } = this.options
-        this.$el.classList.add('select')
-        this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId)
-    }
-    setup() {
-        this.clickHandler = this.clickHandler.bind(this)
-        this.$el.addEventListener('click', this.clickHandler)
-        this.$arrow = this.$el.querySelector('[data-type="arrow"]')
-        this.$value = this.$el.querySelector('[data-type="value"]')
-    }
+  get isOpen() {
+    return this.$el.classList.contains('open');
+  }
 
-    clickHandler(event) {
-        const { type } = event.target.dataset
-        if (type === 'input') {
-            this.toggle()
-        } else if (type === 'item') {
-            const id = event.target.dataset.id
-            this.select(id)
-        }  else if (type === 'backdrop') {
-            this.close()
-        }
-    }
+  get current() {
+    return this.options.data.find((item) => item.id === this.selectedId);
+  }
 
-    get isOpen() {
-        return this.$el.classList.contains('open')
-    }
+  select(id) {
+    this.selectedId = id;
+    this.$value.textContent = this.current.value;
 
-    get current() {
-        return this.options.data.find(item => item.id === this.selectedId)
-    }
+    this.$el
+      .querySelectorAll(`[data-type="item"]`)
+      .forEach((el) => el.classList.remove('selected'));
+    this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
 
-    select(id) {
-        this.selectedId = id
-        this.$value.textContent = this.current.value
+    this.options.onSelect ? this.options.onSelect(this.current) : null;
+    this.close();
+  }
 
-        this.$el.querySelectorAll(`[data-type="item"]`).forEach( el => el.classList.remove('selected'))
-        this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected')
+  toggle() {
+    this.isOpen ? this.close() : this.open();
+  }
 
-        this.options.onSelect ? this.options.onSelect(this.current) : null
-        this.close()
-    }
+  open() {
+    this.$el.classList.add('open');
+    this.$arrow.classList.add('open');
+  }
 
-    toggle() {
-        this.isOpen ? this.close() : this.open()
-    }
+  close() {
+    this.$el.classList.remove('open');
+    this.$arrow.classList.remove('open');
+  }
 
-    open() {
-        this.$el.classList.add('open')
-        this.$arrow.classList.add('open')
-    }
-
-    close() {
-        this.$el.classList.remove('open')
-        this.$arrow.classList.remove('open')
-    }
-
-    destroy() {
-        this.$el.removeEventListener('click', this.clickHandler)
-        this.$el.innerHTML = ''
-    }
+  destroy() {
+    this.$el.removeEventListener('click', this.clickHandler);
+    this.$el.innerHTML = '';
+  }
 }
-
 
 // Инициализация плагина
 const select = new Select('#select', {
-    placeholder: 'Выберите элемент',
-    selectedId: '1',
-    data: [
-        {id: '1', value: 'Элемент списка 1'},
-        {id: '2', value: 'Элемент списка 2'},
-        {id: '3', value: 'Элемент списка 3'},
-        {id: '4', value: 'Элемент списка 4'},
-        {id: '5', value: 'Элемент списка 5'},
-    ],
-    onSelect(item) {
-        const input = document.querySelector('.hidden__input')
-        input.value = item.value
-    } 
-})
-
-
-
-
+  placeholder: 'Выберите элемент',
+  selectedId: '1',
+  data: [
+    { id: '1', value: 'Элемент списка 1' },
+    { id: '2', value: 'Элемент списка 2' },
+    { id: '3', value: 'Элемент списка 3' },
+    { id: '4', value: 'Элемент списка 4' },
+    { id: '5', value: 'Элемент списка 5' },
+  ],
+  onSelect(item) {
+    const input = document.querySelector('.hidden__input');
+    input.value = item.value;
+  },
+});

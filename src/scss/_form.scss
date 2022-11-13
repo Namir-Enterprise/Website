@@ -1,9 +1,95 @@
 .form {
+  // background: blueviolet;
+
   &__title {
     max-width: 700px;
     margin: 90px 0 95px;
   }
   $height: 46px;
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  input {
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid #dadada;
+    min-width: 250px;
+    max-width: 420px;
+    width: 100%;
+    padding-bottom: 15px;
+    position: relative;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #dadada;
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      & + label {
+        transform: translateY(-1.5em) scale(0.8);
+        font-size: 20px;
+        line-height: 145%;
+      }
+    }
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0c0c0c inset !important;
+    -webkit-text-fill-color: white !important;
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    transform-origin: 0 0;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #69696a;
+    cursor: text;
+
+    sup {
+      font-size: 22px;
+    }
+  }
+
+  textarea {
+    max-width: 750px;
+    outline: none;
+    border-bottom: 1px solid #dadada;
+    background: transparent;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: #dadada;
+
+    & + label {
+      top: 5px;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      & + label {
+        transform: translateY(-1.5em) scale(0.8);
+        font-size: 20px;
+        line-height: 145%;
+      }
+    }
+  }
 
   .select {
     width: 100%;
