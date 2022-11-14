@@ -47,6 +47,10 @@
         top: -30%;
         left: 65%;
       }
+      @media (max-width: $bp600) {
+        top: -30%;
+        left: 45%;
+      }
     }
 
     .main-btn {
