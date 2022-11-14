@@ -38,6 +38,12 @@ body {
   white-space: nowrap;
   transition: all 0.3s;
 
+  @media (max-width: $bp700) {
+    padding: 17px 14px;
+    font-size: 16px;
+    line-height: 17px;
+  }
+
   &:hover {
     border: 1px solid transparent;
     background: transparent;
@@ -65,7 +71,7 @@ body {
   .line-2,
   .line-3,
   .line-4 {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     background-color: $orange;
@@ -215,7 +221,7 @@ h2 {
   color: $gray;
 
   &::after {
-    content: "";
+    content: '';
     width: 56px;
     height: 1px;
     position: absolute;

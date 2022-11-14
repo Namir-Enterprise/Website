@@ -55,12 +55,9 @@
 
     .main-btn {
       margin-right: auto;
+
       @media (max-width: $bp880) {
         margin: 0 auto;
-      }
-      @media (max-width: $bp700) {
-        padding: 17px 14px;
-        font-size: 16px;
       }
     }
   }
@@ -126,18 +123,5 @@
         transform: translateX(-2px) rotateZ(45deg);
       }
     }
-  }
-
-  &__blur_left {
-    position: absolute;
-    left: -450px;
-    pointer-events: none;
-  }
-
-  &__blur_right {
-    position: absolute;
-    top: -400px;
-    right: -525px;
-    pointer-events: none;
   }
 }
