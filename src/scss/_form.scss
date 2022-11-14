@@ -1,6 +1,4 @@
 .form {
-  // background: blueviolet;
-
   &__title {
     max-width: 700px;
     margin: 90px 0 95px;
@@ -8,23 +6,44 @@
 
   &__input-wrap {
     position: relative;
+
+    &_details {
+      @media (max-width: $bg1360) {
+        order: 2;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+
+    @media (max-width: $bg1360) {
+      flex-direction: column;
+    }
   }
 
   input {
     background: transparent;
     outline: none;
-    border-bottom: 1px solid #dadada;
-    min-width: 250px;
+    border-bottom: 1px solid $gray;
+    min-width: 348px;
     max-width: 420px;
     width: 100%;
     padding-bottom: 15px;
     position: relative;
-    font-family: 'Rubik';
+    font-family: $fontMain;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
-    color: #dadada;
+    color: $gray;
+
+    @media (max-width: $bp600) {
+      min-width: 100%;
+    }
 
     &:focus,
     &:not(:placeholder-shown),
@@ -37,11 +56,19 @@
     }
   }
 
+  .input__name {
+    min-width: 420px;
+
+    @media (max-width: $bp600) {
+      min-width: 100%;
+    }
+  }
+
   input:-webkit-autofill,
   textarea:-webkit-autofill,
   select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #0c0c0c inset !important;
-    -webkit-text-fill-color: white !important;
+    -webkit-text-fill-color: #fff !important;
   }
 
   label {
@@ -64,16 +91,23 @@
   }
 
   textarea {
-    max-width: 750px;
+    min-width: 750px;
+    min-height: 49px;
+    max-height: 300px;
     outline: none;
-    border-bottom: 1px solid #dadada;
+    resize: vertical;
+    border-bottom: 1px solid $gray;
     background: transparent;
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
-    color: #dadada;
+    color: $gray;
+
+    @media (max-width: $bp880) {
+      min-width: 100%;
+    }
 
     & + label {
       top: 5px;
@@ -99,6 +133,13 @@
     white-space: nowrap;
     z-index: 10;
 
+    @media (max-width: $bg1360) {
+      order: 1;
+    }
+    @media (max-width: $bp600) {
+      max-width: inherit;
+    }
+
     &__backdrop {
       position: fixed;
       left: 0;
@@ -116,7 +157,7 @@
       }
 
       .select__input {
-        border-bottom: none;
+        border-bottom: 1px solid transparent;
       }
 
       .select__backdrop {
@@ -125,7 +166,8 @@
     }
 
     &__input {
-      border-bottom: 1px solid #dadada;
+      position: relative;
+      border-bottom: 1px solid $gray;
       height: $height;
       align-items: center;
       padding-right: 45px;
@@ -133,26 +175,67 @@
       display: flex;
       justify-content: space-between;
 
+      &::before {
+        content: '';
+        width: 1px;
+        height: 27px;
+        background: $gray_text;
+        position: absolute;
+        right: 40px;
+      }
+
       .select__arrow {
         pointer-events: none;
+        position: relative;
+        display: inline-block;
+        width: 0.82rem;
+        height: 1rem;
+        position: absolute;
+        top: 60%;
+        right: 10px;
+        transform: scale(1.5) translateY(-50%);
 
-        &.open {
-          transform: rotate(180deg);
+        span {
+          position: absolute;
+          top: 0.5rem;
+          width: 0.5rem;
+          height: 0.05rem;
+          display: inline-block;
+          background-color: $gray_text;
+          transition: all 0.2s ease;
         }
 
-        width: 15px;
+        span:first-of-type {
+          left: 0;
+          transform: rotate(45deg);
+        }
+
+        span:last-of-type {
+          right: 0;
+          transform: rotate(-45deg);
+        }
+
+        &.open {
+          span:first-of-type {
+            transform: rotate(-45deg);
+          }
+
+          span:last-of-type {
+            transform: rotate(45deg);
+          }
+        }
       }
 
       span {
         white-space: nowrap;
         overflow: hidden;
         pointer-events: none;
-        font-family: 'Rubik';
+        font-family: $fontMain;
         font-style: normal;
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
-        color: #69696a;
+        color: $gray_text;
       }
     }
 
@@ -165,32 +248,37 @@
       right: 0;
       max-height: 200px;
       overflow-y: auto;
-      background: #1d1d1f;
+      background: $black;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
       .select__list {
         .select__item {
-          padding: 10px;
-          border-bottom: 1px solid #ccc;
-          font-family: 'Rubik';
+          padding: 10px 20px;
+          font-family: $fontMain;
           font-style: normal;
           font-weight: 300;
           font-size: 24px;
           line-height: 28px;
-          font-variant: small-caps;
-          color: #dadada;
+          color: $gray;
           cursor: pointer;
 
           &.selected {
-            background: #69696a;
+            background: $gray_text;
           }
 
           &:hover {
-            background-color: #eee;
+            background-color: #383839;
             transition: 0.15 background-color ease-in;
           }
         }
       }
+    }
+  }
+
+  button {
+    @media (max-width: $bg1360) {
+      order: 3;
+      width: fit-content;
     }
   }
 }

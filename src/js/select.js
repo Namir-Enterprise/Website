@@ -1,6 +1,6 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
   let text = placeholder ?? 'placeholder не указан';
-
+  const name = 'site-type';
   const items = data.map((item) => {
     let cls = '';
     if (item.id === selectedId) {
@@ -12,11 +12,16 @@ const getTemplate = (data = [], placeholder, selectedId) => {
         `;
   });
   return `
-        <input type="hidden" name="site-type" class="hidden__input">
+        <input type="hidden" name=${name} class="hidden__input">
         <div class="select__backdrop" data-type="backdrop"></div>
         <div class="select__input" data-type="input">
             <span data-type="value">${text}</span>
-            <img src="./img/down-arrow.svg" alt="arrow" data-type="arrow" class="select__arrow">
+            <span class="select__arrow" data-type="arrow" >
+              <span>
+              </span>
+            <span>
+            </span>
+        </span>
         </div>
         <div class="select__dropdown">
             <ul class="select__list">
@@ -102,7 +107,7 @@ class Select {
 
 // Инициализация плагина
 const select = new Select('#select', {
-  placeholder: 'Выберите элемент',
+  placeholder: 'Тип сайту',
   selectedId: '1',
   data: [
     { id: '1', value: 'Лендінг' },

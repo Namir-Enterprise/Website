@@ -7,3 +7,4 @@
 @@include('indicator.js')
 @@include('select.js')
 @@include('./libs/phonemask(lib).js')
+@@include('autoresize.js')
