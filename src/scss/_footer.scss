@@ -18,6 +18,12 @@
       gap: 300px;
       margin-right: 150px;
 
+      li {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
       &__contacts {
         margin-bottom: 20px;
 
@@ -30,10 +36,8 @@
         }
       }
 
-      li {
-        &:not(:last-child) {
-          margin-bottom: 16px;
-        }
+      &__list {
+        margin-bottom: 20px;
       }
 
       &__btn {
