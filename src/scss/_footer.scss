@@ -64,9 +64,13 @@
 
             &__arrow {
                 position: relative;
-                display: inline-block;
+                display: none;
                 width: 0.82rem;
                 height: 1rem;
+
+                @media (max-width: 594px) {
+                    display: inline-block;
+                }
 
                 span {
                     position: absolute;
