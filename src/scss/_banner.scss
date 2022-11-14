@@ -6,9 +6,13 @@
 
   .inner {
     position: relative;
-    z-index: 1;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
 
     &::before {
       content: url(../img/blur-left.svg);
@@ -16,6 +20,19 @@
       top: 25%;
       left: -45%;
       z-index: -1;
+
+      @media (max-width: $bp880) {
+        content: url(../img/mobile-blur-left.svg);
+        left: -35%;
+      }
+      @media (max-width: $bp700) {
+        left: -65%;
+        top: 50%;
+      }
+      @media (max-width: $bp480) {
+        left: -100%;
+        top: 50%;
+      }
     }
 
     &::after {
@@ -24,23 +41,25 @@
       top: -140%;
       left: 80%;
       z-index: -1;
+
+      @media (max-width: $bp880) {
+        content: url(../img/mobile-blur-right.svg);
+        left: 55%;
+        top: -90%;
+      }
+      @media (max-width: $bp480) {
+        left: 30%;
+      }
     }
 
     .main-btn {
+      margin-right: auto;
       @media (max-width: $bp880) {
-        position: absolute;
-        left: 50%;
-        transform: translate(-50%, 0);
+        margin: 0 auto;
       }
       @media (max-width: $bp700) {
         padding: 17px 14px;
         font-size: 16px;
-      }
-    }
-
-    @media (max-width: $bp880) {
-      &::before {
-        content: " ";
       }
     }
   }
@@ -51,12 +70,11 @@
 
   &__scroll {
     max-width: 139px;
-    position: relative;
+    position: absolute;
+    bottom: 65px;
+    right: 0;
     display: flex;
     gap: 10px;
-    margin-left: auto;
-    margin-top: 70px;
-    left: 60px;
     align-items: center;
     justify-content: flex-end;
     transform: rotate(90deg);

@@ -26,14 +26,14 @@
          gap: 30px;
          margin-bottom: 30px;
       }
-      @media (max-width: $bp768) {
+      @media (max-width: $bp700) {
          flex-wrap: wrap;
       }
    }
 
    &__img {
       max-width: 48%;
-      @media (max-width: $bp768) {
+      @media (max-width: $bp700) {
          max-width: 100%;
       }
    }
