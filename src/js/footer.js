@@ -1,4 +1,4 @@
-const item = document.querySelectorAll('.text-info__list');
+const item = document.querySelectorAll('.text-info__company');
 item.forEach(el => {
    el.addEventListener('click', (e) => {
       const title = el.querySelector('.text-info__item_title')

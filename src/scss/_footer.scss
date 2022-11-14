@@ -18,6 +18,18 @@
             gap: 300px;
             margin-right: 150px;
 
+            &__contacts {
+                margin-bottom: 20px;
+
+                .text-info__list {
+                    li {
+                        &:first-child {
+                            margin-top: 20px;
+                        }
+                    }
+                }
+            }
+
             li {
                 &:not(:last-child) {
                     margin-bottom: 16px;
@@ -43,7 +55,11 @@
                     font-weight: 500;
                     font-size: 18px;
                     color: $gray;
-                    cursor: default;
+                }
+
+                &_custom {
+                    margin-bottom: 20px;
+                    display: inline-block;
                 }
 
                 &:hover {
