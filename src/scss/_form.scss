@@ -5,7 +5,6 @@
     max-width: 700px;
     margin: 90px 0 95px;
   }
-  $height: 46px;
 
   &__input-wrap {
     position: relative;
@@ -91,9 +90,13 @@
     }
   }
 
+  $height: 45px;
+
   .select {
     width: 100%;
+    max-width: 425px;
     position: relative;
+    white-space: nowrap;
     z-index: 10;
 
     &__backdrop {
@@ -122,12 +125,10 @@
     }
 
     &__input {
-      border: 1px solid #ccc;
+      border-bottom: 1px solid #dadada;
       height: $height;
-      border-radius: 5px;
-      display: flex;
       align-items: center;
-      padding: 0 15px;
+      padding-right: 45px;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -143,30 +144,45 @@
       }
 
       span {
+        white-space: nowrap;
+        overflow: hidden;
         pointer-events: none;
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+        color: #69696a;
       }
     }
 
     &__dropdown {
       display: none;
       position: absolute;
-      border: 1px solid #ccc;
       border-radius: 5px;
       top: $height;
       left: 0;
       right: 0;
       max-height: 200px;
       overflow-y: auto;
-      box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+      background: #1d1d1f;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
       .select__list {
         .select__item {
           padding: 10px;
           border-bottom: 1px solid #ccc;
+          font-family: 'Rubik';
+          font-style: normal;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 28px;
+          font-variant: small-caps;
+          color: #dadada;
           cursor: pointer;
 
           &.selected {
-            background-color: beige;
+            background: #69696a;
           }
 
           &:hover {

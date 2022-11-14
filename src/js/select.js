@@ -105,11 +105,13 @@ const select = new Select('#select', {
   placeholder: 'Выберите элемент',
   selectedId: '1',
   data: [
-    { id: '1', value: 'Элемент списка 1' },
-    { id: '2', value: 'Элемент списка 2' },
-    { id: '3', value: 'Элемент списка 3' },
-    { id: '4', value: 'Элемент списка 4' },
-    { id: '5', value: 'Элемент списка 5' },
+    { id: '1', value: 'Лендінг' },
+    { id: '2', value: 'Інтернет-магазин на OpenCart' },
+    { id: '3', value: 'Інтернет-магазин під ключ' },
+    { id: '4', value: 'Розробка сайту на CMS Statamic' },
+    { id: '5', value: 'Розробка дизайну' },
+    { id: '6', value: 'Розробка мобільного додатку' },
+    { id: '7', value: 'Розробка CRM систем' },
   ],
   onSelect(item) {
     const input = document.querySelector('.hidden__input');
