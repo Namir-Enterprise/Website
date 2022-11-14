@@ -1,5 +1,5 @@
-const list = document.querySelectorAll('.text-info__list');
-list.forEach(el => {
+const item = document.querySelectorAll('.text-info__list');
+item.forEach(el => {
    el.addEventListener('click', (e) => {
       const title = el.querySelector('.text-info__item_title')
       const wrapper = el.querySelector('.text-info__item-wrapper')
