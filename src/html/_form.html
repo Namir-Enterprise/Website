@@ -1,0 +1,36 @@
+<section class="form">
+    <div class="inner">
+        <span class="section-counter">06/06</span>
+        <h2 class="form__title">Хочете зробити щось велике? Дозвольте допомогти вам</h2>
+        <form action="http://foo.com" method="post">
+            <fieldset>
+                <div class="form__container">
+                    <div class="form__input-wrap">
+                        <input type="text" name="name" id="name" required maxlength="50" autocomplete="name"
+                            class="input__name" placeholder=" ">
+                        <label for="name">Введіть ваше ім’я<sup>*</sup></label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="text" name="phone" id="phone" required minlength="19" autocomplete="tel"
+                            inputmode="tel" class="phone__input" placeholder=" ">
+                        <label for="phone">Номер телефону<sup>*</sup></label>
+                    </div>
+                    <div class="form__input-wrap">
+                        <input type="email" name="email" id="email" required maxlength="50" autocomplete="email"
+                            autocapitalize="off" inputmode="email" placeholder=" ">
+                        <label for="email">Email<sup>*</sup></label>
+                    </div>
+                    <div class="form__input-wrap form__input-wrap_details">
+                        <textarea name="details" id="details" data-autoresize maxlength="1000"
+                            placeholder=" "></textarea>
+                        <label for="details">Подробиці проекту</label>
+                    </div>
+                    <div id="select">
+                        <input type=" hidden" class="hidden__input">
+                    </div>
+                    <button type="submit" class="main-btn">Замовити розробку</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

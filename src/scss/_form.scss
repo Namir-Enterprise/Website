@@ -1,0 +1,284 @@
+.form {
+  &__title {
+    max-width: 700px;
+    margin: 90px 0 95px;
+  }
+
+  &__input-wrap {
+    position: relative;
+
+    &_details {
+      @media (max-width: $bg1360) {
+        order: 2;
+      }
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 60px;
+
+    @media (max-width: $bg1360) {
+      flex-direction: column;
+    }
+  }
+
+  input {
+    background: transparent;
+    outline: none;
+    border-bottom: 1px solid $gray;
+    min-width: 348px;
+    max-width: 420px;
+    width: 100%;
+    padding-bottom: 15px;
+    position: relative;
+    font-family: $fontMain;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: $gray;
+
+    @media (max-width: $bp600) {
+      min-width: 100%;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      & + label {
+        transform: translateY(-1.5em) scale(0.8);
+        font-size: 20px;
+        line-height: 145%;
+      }
+    }
+  }
+
+  .input__name {
+    min-width: 420px;
+
+    @media (max-width: $bp600) {
+      min-width: 100%;
+    }
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #0c0c0c inset !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  label {
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    transform-origin: 0 0;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 38px;
+    color: #69696a;
+    cursor: text;
+
+    sup {
+      font-size: 22px;
+    }
+  }
+
+  textarea {
+    min-width: 750px;
+    min-height: 49px;
+    max-height: 300px;
+    outline: none;
+    resize: vertical;
+    border-bottom: 1px solid $gray;
+    background: transparent;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    color: $gray;
+
+    @media (max-width: $bp880) {
+      min-width: 100%;
+    }
+
+    & + label {
+      top: 5px;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:-webkit-autofill {
+      & + label {
+        transform: translateY(-1.5em) scale(0.8);
+        font-size: 20px;
+        line-height: 145%;
+      }
+    }
+  }
+
+  $height: 45px;
+
+  .select {
+    width: 100%;
+    max-width: 425px;
+    position: relative;
+    white-space: nowrap;
+    z-index: 10;
+
+    @media (max-width: $bg1360) {
+      order: 1;
+    }
+    @media (max-width: $bp600) {
+      max-width: inherit;
+    }
+
+    &__backdrop {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      z-index: -1;
+      display: none;
+    }
+
+    &.open {
+      .select__dropdown {
+        display: block;
+      }
+
+      .select__input {
+        border-bottom: 1px solid transparent;
+      }
+
+      .select__backdrop {
+        display: block;
+      }
+    }
+
+    &__input {
+      position: relative;
+      border-bottom: 1px solid $gray;
+      height: $height;
+      align-items: center;
+      padding-right: 45px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+
+      &::before {
+        content: '';
+        width: 1px;
+        height: 27px;
+        background: $gray_text;
+        position: absolute;
+        right: 40px;
+      }
+
+      .select__arrow {
+        pointer-events: none;
+        position: relative;
+        display: inline-block;
+        width: 0.82rem;
+        height: 1rem;
+        position: absolute;
+        top: 60%;
+        right: 10px;
+        transform: scale(1.5) translateY(-50%);
+
+        span {
+          position: absolute;
+          top: 0.5rem;
+          width: 0.5rem;
+          height: 0.05rem;
+          display: inline-block;
+          background-color: $gray_text;
+          transition: all 0.2s ease;
+        }
+
+        span:first-of-type {
+          left: 0;
+          transform: rotate(45deg);
+        }
+
+        span:last-of-type {
+          right: 0;
+          transform: rotate(-45deg);
+        }
+
+        &.open {
+          span:first-of-type {
+            transform: rotate(-45deg);
+          }
+
+          span:last-of-type {
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        pointer-events: none;
+        font-family: $fontMain;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 32px;
+        line-height: 38px;
+        color: $gray_text;
+      }
+    }
+
+    &__dropdown {
+      display: none;
+      position: absolute;
+      border-radius: 5px;
+      top: $height;
+      left: 0;
+      right: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background: $black;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+      .select__list {
+        .select__item {
+          padding: 10px 20px;
+          font-family: $fontMain;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 24px;
+          line-height: 28px;
+          color: $gray;
+          cursor: pointer;
+
+          &.selected {
+            background: $gray_text;
+          }
+
+          &:hover {
+            background-color: #383839;
+            transition: 0.15 background-color ease-in;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    @media (max-width: $bg1360) {
+      order: 3;
+      width: fit-content;
+    }
+  }
+}
