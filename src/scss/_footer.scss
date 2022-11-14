@@ -24,6 +24,12 @@
                 }
             }
 
+            &__btn {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+
             &__item {
                 margin-bottom: 20px;
                 color: $light_gray_text;
@@ -33,7 +39,6 @@
                 transition: all 0.3s ease;
 
                 &_title {
-                    margin-bottom: 20px;
                     font-style: normal;
                     font-weight: 500;
                     font-size: 18px;
@@ -43,6 +48,56 @@
 
                 &:hover {
                     color: $gray;
+                }
+            }
+
+            &__item-wrapper {
+                margin: 20px 0;
+                @media (max-width: 594px) {
+                    max-height: 0;
+                    opacity: 0;
+                    overflow: hidden;
+                    transition: all 0.3s ease-out;
+                    box-sizing: content-box;
+                }
+            }
+
+            &__arrow {
+                position: relative;
+                display: inline-block;
+                width: 0.82rem;
+                height: 1rem;
+
+                span {
+                    position: absolute;
+                    top: 0.5rem;
+                    width: 0.5rem;
+                    height: 0.05rem;
+                    display: inline-block;
+                    background-color: #efefef;
+                    transition: all 0.2s ease;
+                }
+
+                span:first-of-type {
+                    left: 0;
+                    transform: rotate(45deg);
+                }
+
+                span:last-of-type {
+                    right: 0;
+                    -webkit-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                }
+
+                &.active {
+                    span:first-of-type {
+                        transform: rotate(-45deg);
+                    }
+
+                    span:last-of-type {
+                        transform: rotate(45deg);
+                    }
                 }
             }
 
@@ -57,9 +112,9 @@
             @media (max-width: $bp991) {
                 gap: 85px;
             }
-
-            @media (max-width: 549px) {
-                gap: 40px;
+            @media (max-width: 594px) {
+                flex-direction: column;
+                gap: 0;
             }
         }
 
@@ -73,6 +128,10 @@
 
                 @media (max-width: 708px) {
                     margin: 40px 0px 15px 0;
+                }
+
+                @media (max-width: 594px) {
+                    margin: 0 0px 15px 0;
                 }
             }
 
