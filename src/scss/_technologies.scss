@@ -1,6 +1,10 @@
 .technology {
   margin-bottom: 180px;
 
+  @media (max-width: $bp480) {
+    margin-bottom: 80px;
+  }
+
   &__title {
     margin-bottom: 40px;
   }
@@ -150,9 +154,5 @@
     @media (max-width: $bp1380) {
       font-size: 15px;
     }
-  }
-
-  @media (max-width: $bp480) {
-    margin-bottom: 80px;
   }
 }

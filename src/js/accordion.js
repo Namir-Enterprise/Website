@@ -1,10 +1,12 @@
 // Accordion
 function accordion() {
   const items = document.querySelectorAll('.accordion-item__control');
+
   items.forEach((item) => {
     item.addEventListener('click', () => {
       const parent = item.parentNode;
       const content = parent.querySelector('.accordion-item__content');
+
       if (parent.classList.contains('open')) {
         parent.classList.remove('open');
         content.style.maxHeight = null;
@@ -22,4 +24,5 @@ function accordion() {
     });
   });
 }
+
 accordion();

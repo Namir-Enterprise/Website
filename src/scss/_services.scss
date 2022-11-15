@@ -1,7 +1,9 @@
 .services {
   margin-bottom: 80px;
+
   .inner {
     position: relative;
+
     &::before {
       content: url(../img/blur-right.svg);
       position: absolute;
@@ -13,6 +15,12 @@
         content: ' ';
       }
     }
+  }
+
+  &__blur {
+    position: absolute;
+    left: -27%;
+    top: 20%;
   }
 
   &__wrapper {
@@ -31,8 +39,14 @@
       .accordion-item {
         margin-bottom: 30px;
         border-bottom: 1px solid $light_gray_text;
+
+        @media (max-width: $bp480) {
+          margin-bottom: 20px;
+        }
+
         &.open {
           border-bottom: 1px solid $orange;
+
           .accordion-item {
             &__title {
               color: $gray;
@@ -69,9 +83,6 @@
           justify-content: space-between;
           align-items: center;
           background-color: transparent;
-
-          @media (max-width: $bp480) {
-          }
         }
 
         &__title {
@@ -139,17 +150,7 @@
             font-size: 16px;
           }
         }
-
-        @media (max-width: $bp480) {
-          margin-bottom: 20px;
-        }
       }
     }
-  }
-
-  &__blur {
-    position: absolute;
-    left: -27%;
-    top: 20%;
   }
 }

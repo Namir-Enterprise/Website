@@ -86,12 +86,11 @@
     bottom: 5px;
     transform-origin: 0 0;
     transition: all 0.3s ease-in-out;
-    font-family: 'Rubik';
     font-style: normal;
     font-weight: 300;
     font-size: 32px;
     line-height: 38px;
-    color: #69696a;
+    color: $gray_text;
     cursor: text;
 
     sup {
@@ -107,7 +106,6 @@
     resize: vertical;
     border-bottom: 1px solid $gray;
     background: transparent;
-    font-family: 'Rubik';
     font-style: normal;
     font-weight: 300;
     font-size: 20px;

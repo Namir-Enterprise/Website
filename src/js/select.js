@@ -105,7 +105,6 @@ class Select {
   }
 }
 
-// Инициализация плагина
 const select = new Select('#select', {
   placeholder: 'Тип сайту',
   selectedId: '1',
