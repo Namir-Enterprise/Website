@@ -3,6 +3,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  padding-top: 49px;
 
   .inner {
     position: relative;
@@ -62,10 +63,6 @@
     }
   }
 
-  &__title {
-    margin-bottom: 40px;
-  }
-
   &__scroll {
     max-width: 139px;
     position: absolute;
@@ -98,7 +95,6 @@
   }
 
   &__scroll-down {
-    font-style: normal;
     font-weight: 300;
     font-size: 18px;
     color: $gray;

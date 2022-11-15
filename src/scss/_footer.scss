@@ -44,7 +44,6 @@
       &__item {
         margin-bottom: 20px;
         color: $light_gray_text;
-        font-style: normal;
         font-weight: 300;
         font-size: 16px;
         transition: all 0.3s ease;
@@ -54,7 +53,6 @@
         }
 
         &_title {
-          font-style: normal;
           font-weight: 500;
           font-size: 18px;
           color: $gray;
@@ -159,7 +157,6 @@
       }
 
       &__lang-btn {
-        font-style: normal;
         font-weight: 300;
         font-size: 16px;
         color: $light_gray_text;
@@ -180,7 +177,6 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        font-style: normal;
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;

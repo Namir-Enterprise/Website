@@ -83,10 +83,10 @@
           justify-content: space-between;
           align-items: center;
           background-color: transparent;
+          cursor: pointer;
         }
 
         &__title {
-          font-style: normal;
           font-weight: 300;
           font-size: 32px;
           color: $light_gray_text;
@@ -137,7 +137,6 @@
           padding: 0;
           opacity: 0;
           overflow: hidden;
-          font-style: normal;
           font-weight: 300;
           font-size: 20px;
           line-height: 145%;

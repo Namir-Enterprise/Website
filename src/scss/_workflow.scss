@@ -140,7 +140,6 @@
         opacity: 0;
         transform: translateY(0px);
         font-family: $fontMain;
-        font-style: normal;
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
@@ -155,7 +154,6 @@
         position: absolute;
         left: 63px;
         font-family: $fontMain;
-        font-style: normal;
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
@@ -287,7 +285,6 @@
         display: inline-block;
         margin-bottom: 20px;
         font-family: $fontMain;
-        font-style: normal;
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
@@ -300,7 +297,6 @@
 
       &-text {
         font-family: $fontMain;
-        font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;
@@ -322,7 +318,6 @@
       &-list {
         margin-left: 20px;
         font-family: $fontMain;
-        font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;

@@ -29,7 +29,6 @@ body {
   border-radius: 3px;
   background: $orange;
   font-family: $fontMain;
-  font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -170,11 +169,11 @@ body {
 // Typography
 h1 {
   font-family: $fontMain;
-  font-style: normal;
   font-weight: 300;
   font-size: 96px;
   line-height: 99.99%;
   color: $gray;
+  margin-bottom: 40px;
 
   max-width: 980px;
 
@@ -198,14 +197,14 @@ h1 {
 
 h2 {
   font-family: $fontMain;
-  font-style: normal;
   font-weight: 400;
   font-size: 48px;
   line-height: 100%;
   color: $gray;
 
-  @media (max-width: $bp480) {
+  @media (max-width: $bp600) {
     font-size: 28px;
+    line-height: 100%;
   }
 }
 
@@ -214,7 +213,6 @@ h2 {
   display: inline-block;
   margin-bottom: 60px;
   font-family: $fontMain;
-  font-style: normal;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;

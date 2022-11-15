@@ -1,5 +1,12 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
   let text = placeholder ?? 'placeholder не указан';
+
+  const SPACEBAR_KEY_CODE = [0, 32];
+  const ENTER_KEY_CODE = 13;
+  const DOWN_ARROW_KEY_CODE = 40;
+  const UP_ARROW_KEY_CODE = 38;
+  const ESCAPE_KEY_CODE = 27;
+
   const name = 'site-type';
   const items = data.map((item) => {
     let cls = '';
@@ -8,14 +15,14 @@ const getTemplate = (data = [], placeholder, selectedId) => {
       cls = 'selected';
     }
     return `
-            <li class="select__item ${cls}" data-type="item" data-id="${item.id}">${item.value}</li>
+            <li class="select__item ${cls}" data-type="item" tabindex="0" role="option" data-id="${item.id}">${item.value}</li>
         `;
   });
   return `
         <input type="hidden" name=${name} class="hidden__input">
         <div class="select__backdrop" data-type="backdrop"></div>
         <div class="select__input" data-type="input">
-            <span data-type="value">${text}</span>
+            <span data-type="value">${placeholder}</span>
             <span class="select__arrow" data-type="arrow" >
               <span>
               </span>
@@ -24,7 +31,7 @@ const getTemplate = (data = [], placeholder, selectedId) => {
         </span>
         </div>
         <div class="select__dropdown">
-            <ul class="select__list">
+            <ul class="select__list" role="listbox">
                 ${items.join('')}
             </ul>
         </div>
@@ -43,6 +50,7 @@ class Select {
   render() {
     const { placeholder, data } = this.options;
     this.$el.classList.add('select');
+    this.$el.setAttribute('tabindex', '0');
     this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
   }
   setup() {
@@ -54,6 +62,7 @@ class Select {
 
   clickHandler(event) {
     const { type } = event.target.dataset;
+    console.log('g');
     if (type === 'input') {
       this.toggle();
     } else if (type === 'item') {

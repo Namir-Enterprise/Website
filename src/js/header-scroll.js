@@ -1,10 +1,10 @@
 // Header scroll
 const header = document.querySelector('.header');
 const first = document.querySelector('.banner');
-const headerHeight = header.offsetHeight; //variable to add margin for first element after header
+// const headerHeight = header.offsetHeight;
 const containHide = () => header.classList.contains('header__hide');
 let lastScrollTop = 0;
-first.style.paddingTop = `${headerHeight}px`;
+// first.style.paddingTop = `${headerHeight}px`;
 
 document.addEventListener('scroll', handleScrollHeader);
 
