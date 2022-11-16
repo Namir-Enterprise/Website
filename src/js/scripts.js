@@ -8,4 +8,5 @@
 @@include('select.js')
 @@include('./libs/phonemask(lib).js')
 @@include('autoresize.js')
+@@include('form-request.js')
 @@include('footer.js')

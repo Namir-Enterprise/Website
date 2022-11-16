@@ -1,12 +1,6 @@
 const getTemplate = (data = [], placeholder, selectedId) => {
   let text = placeholder ?? 'placeholder не указан';
 
-  const SPACEBAR_KEY_CODE = [0, 32];
-  const ENTER_KEY_CODE = 13;
-  const DOWN_ARROW_KEY_CODE = 40;
-  const UP_ARROW_KEY_CODE = 38;
-  const ESCAPE_KEY_CODE = 27;
-
   const name = 'site-type';
   const items = data.map((item) => {
     let cls = '';
@@ -62,7 +56,6 @@ class Select {
 
   clickHandler(event) {
     const { type } = event.target.dataset;
-    console.log('g');
     if (type === 'input') {
       this.toggle();
     } else if (type === 'item') {
