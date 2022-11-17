@@ -9,6 +9,7 @@
   },
   "keywords": [],
   "author": "",
+  "homepage": "https://vovafouchek.github.io/Namir-Enterprise/",
   "license": "ISC",
   "dependencies": {
     "gulp": "^4.0.2"
