@@ -5917,7 +5917,7 @@ const createModal = (
   const modalWindow = `
           <div class="modal__wrapper">
           <div class="modal ${type.status}">
-              <img src="../img/icons/${type.picture}.svg" class="modal__picture" alt="icon">
+              <img src="./img/icons/${type.picture}.svg" class="modal__picture" alt="icon">
               <div class="modal__title"><span>${type.title}</span> </div>
               <div class="modal__body">
                   <p class="modal__body-text">${type.text}</p>
