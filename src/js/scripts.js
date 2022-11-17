@@ -6,7 +6,7 @@
 @@include('tabs.js')
 @@include('indicator.js')
 @@include('select.js')
-@@include('./libs/phonemask(lib).js')
 @@include('autoresize.js')
+@@include('./libs/phonemask(lib).js')   
 @@include('form-request.js')
 @@include('footer.js')

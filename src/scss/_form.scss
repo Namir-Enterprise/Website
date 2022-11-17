@@ -52,7 +52,6 @@
     width: 100%;
     padding-bottom: 15px;
     position: relative;
-    font-family: $fontMain;
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
@@ -254,7 +253,6 @@
         white-space: nowrap;
         overflow: hidden;
         pointer-events: none;
-        font-family: $fontMain;
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
@@ -282,7 +280,6 @@
       .select__list {
         .select__item {
           padding: 10px 20px;
-          font-family: $fontMain;
           font-weight: 300;
           font-size: 24px;
           line-height: 28px;

@@ -1,7 +1,6 @@
 .contacts {
   background-color: $gray;
   padding: 60px 0 80px 0;
-  margin-bottom: 100px;
 
   &__title {
     color: $black;
@@ -36,7 +35,7 @@
     display: flex;
     gap: 30px;
 
-    @media (max-width: $bp480) {
+    @media (max-width: $bp600) {
       flex-wrap: wrap;
       padding: 35px 0 27px 0;
     }
@@ -48,7 +47,7 @@
       font-size: 32px;
       color: $black;
 
-      @media (max-width: $bp480) {
+      @media (max-width: $bp600) {
         margin-bottom: 13px;
         font-size: 18px;
       }

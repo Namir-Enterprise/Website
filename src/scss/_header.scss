@@ -56,7 +56,6 @@
 
         &__text {
           margin-right: 5px;
-          font-family: $fontMain;
           font-weight: 300;
           font-size: 16px;
           color: $gray;
@@ -118,7 +117,6 @@
           padding: 12px 21px;
           background-color: $black;
           border-radius: 3px;
-          font-family: $fontMain;
           font-weight: 300;
           font-size: 16px;
           color: $gray;
@@ -154,7 +152,6 @@
       display: inline-block;
       color: $gray;
       font-weight: 300;
-      font-family: $fontMain;
       font-size: 16px;
       transition: font-weight 0.2s ease-in-out;
 

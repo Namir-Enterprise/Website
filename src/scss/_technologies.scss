@@ -1,6 +1,10 @@
 .technology {
   margin-bottom: 180px;
 
+  &:before {
+    @include anchorForLink;
+  }
+
   @media (max-width: $bp480) {
     margin-bottom: 80px;
   }
@@ -147,7 +151,7 @@
     font-size: 18px;
     line-height: 100%;
     color: $light_gray_text;
-    padding-right: 5px;
+    padding-right: 20px;
 
     @media (max-width: $bp1380) {
       font-size: 15px;

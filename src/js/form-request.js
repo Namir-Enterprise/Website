@@ -6,6 +6,12 @@ const body = document.querySelector('body');
 const inputs = document.querySelectorAll('input');
 const textarea = document.querySelector('textarea');
 
+const phone = document.querySelector('.phone__input');
+const maskOptions = {
+  mask: '+{38\\0} (00) 000 00 00',
+};
+const mask = IMask(phone, maskOptions);
+
 const typeModal = {
   success: {
     status: 'success',
@@ -72,6 +78,7 @@ const handleSubmit = (event) => {
 
 const clearValues = () => {
   form.reset();
+  mask.destroy();
 };
 
 const customFetch = async (payload) => {
@@ -85,14 +92,11 @@ const customFetch = async (payload) => {
 
   try {
     const response = await fetch(URL, fetchData);
-    console.log(response);
     let responseChecked;
     if (response.ok) {
       console.log('Request successful');
       responseChecked = response;
       let data = await responseChecked.json();
-      console.log(data);
-
       createModal(typeModal.success);
       clearValues();
     } else {

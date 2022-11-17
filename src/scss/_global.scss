@@ -10,6 +10,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 // Body Locked
 body {
   font-family: $fontMain;
@@ -22,13 +26,13 @@ body {
 
 // Button
 .main-btn {
+  font-family: $fontMain;
   position: relative;
   display: inline-block;
   padding: 22px 55px;
   border: 1px solid $orange;
   border-radius: 3px;
   background: $orange;
-  font-family: $fontMain;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -168,7 +172,6 @@ body {
 
 // Typography
 h1 {
-  font-family: $fontMain;
   font-weight: 300;
   font-size: 96px;
   line-height: 99.99%;
@@ -196,7 +199,6 @@ h1 {
 }
 
 h2 {
-  font-family: $fontMain;
   font-weight: 400;
   font-size: 48px;
   line-height: 100%;
@@ -212,7 +214,6 @@ h2 {
   position: relative;
   display: inline-block;
   margin-bottom: 60px;
-  font-family: $fontMain;
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
@@ -226,5 +227,28 @@ h2 {
     bottom: -15px;
     left: 0;
     background-color: $orange;
+  }
+}
+
+@mixin anchorForLink {
+  display: block;
+  content: '';
+  height: 120px;
+  margin: -120px 0 0;
+
+  @media (max-width: $bp1024) {
+    height: 90px;
+    margin: -90px 0 0;
+  }
+  @media (max-width: $bp768) {
+    height: 70px;
+    margin: -70px 0 0;
+  }
+}
+
+// For people, who turn off the animation on the website
+@media (prefers-reduced-motion) {
+  * {
+    transition: none;
   }
 }

@@ -4,6 +4,7 @@ $innerWidth: 1280;
 $innerPadding: 80;
 $innerSidePadding: math.div($innerPadding, 2);
 
+$bp1440: 1440 + px;
 $bp1380: 1380 + px;
 $bp1360: 1360 + px;
 $bp1235: 1235 + px;
@@ -18,12 +19,8 @@ $bp480: 480 + px;
 $bp428: 428 + px;
 $bp375: 375 + px;
 $bp365: 365 + px;
+$bp345: 345 + px;
 $bp320: 320 + px;
-
-// Burger Menu
-$burgerBreakpoint: $bp768;
-$burgerColor: 'orange';
-$burgerActiveColor: 'white';
 
 // Colors
 $dark: #0c0c0c;
@@ -33,6 +30,11 @@ $light_orange: #ffa010;
 $gray: #dadada;
 $light_gray_text: #9f9f9f;
 $gray_text: #69696a;
+
+// Burger Menu
+$burgerBreakpoint: $bp768;
+$burgerColor: $gray;
+$burgerActiveColor: 'white';
 
 // Fonts
 $fontMain: 'Rubik', sans-serif;

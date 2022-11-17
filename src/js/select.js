@@ -13,7 +13,7 @@ const getTemplate = (data = [], placeholder, selectedId) => {
         `;
   });
   return `
-        <input type="hidden" name=${name} class="hidden__input">
+        <input type="hidden" name=${name} class="hidden__input" required>
         <div class="select__backdrop" data-type="backdrop"></div>
         <div class="select__input" data-type="input">
             <span data-type="value">${placeholder}</span>
@@ -108,7 +108,7 @@ class Select {
 }
 
 const select = new Select('#select', {
-  placeholder: 'Тип сайту',
+  placeholder: 'Тип сайту:',
   selectedId: '1',
   data: [
     { id: '1', value: 'Лендінг' },

@@ -1,7 +1,7 @@
 const item = document.querySelectorAll('.text-info__company');
 
 item.forEach((el) => {
-  el.addEventListener('click', (e) => {
+  el.addEventListener('click', () => {
     const title = el.querySelector('.text-info__item_title');
     const wrapper = el.querySelector('.text-info__item-wrapper');
     const arrowBtn = el.querySelector('.text-info__arrow');

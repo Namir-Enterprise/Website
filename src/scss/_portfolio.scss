@@ -1,6 +1,10 @@
 .portfolio {
   margin-bottom: 95px;
 
+  &:before {
+    @include anchorForLink;
+  }
+
   @media (max-width: $bp1360) {
     margin-bottom: 80px;
   }
@@ -104,13 +108,15 @@
     border-radius: 10px;
     white-space: nowrap;
 
+    @media (max-width: $bp1024) {
+      font-size: 24px;
+    }
     @media (max-width: $bp700) {
       width: 10vw;
       height: 86vw;
       max-width: inherit;
       max-height: inherit;
     }
-
     @media (max-width: $bp600) {
       font-size: 25px;
     }

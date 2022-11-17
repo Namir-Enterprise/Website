@@ -16,7 +16,7 @@ function accordion() {
           .forEach((child) => child.classList.remove('open'));
         document
           .querySelectorAll('.accordion-item__content')
-          .forEach((cum) => (cum.style.maxHeight = null));
+          .forEach((element) => (element.style.maxHeight = null));
         parent.classList.add('open');
         content.style.maxHeight = content.scrollHeight + 'px';
         content.style.opacity = 1;

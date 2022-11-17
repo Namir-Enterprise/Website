@@ -8,9 +8,12 @@
       content: url(../img/blur-right.svg);
       position: absolute;
       left: -33%;
-      top: 15%;
+      // top: 15%;
       z-index: -1;
 
+      @media (max-width: $bp1024) {
+        left: -45%;
+      }
       @media (max-width: $bp991) {
         content: ' ';
       }

@@ -139,7 +139,6 @@
         align-items: center;
         opacity: 0;
         transform: translateY(0px);
-        font-family: $fontMain;
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
@@ -153,7 +152,6 @@
       &-caption {
         position: absolute;
         left: 63px;
-        font-family: $fontMain;
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
@@ -203,9 +201,9 @@
       justify-content: right;
       align-items: center;
       z-index: 1;
-      opacity: 0;
+      opacity: 1;
       transform: scale(1);
-      animation: showContent 0.7s forwards;
+      // animation: showContent 0.7s forwards;
       animation-timing-function: ease-in;
 
       @media (max-width: $bp991) {
@@ -284,7 +282,6 @@
       &-title {
         display: inline-block;
         margin-bottom: 20px;
-        font-family: $fontMain;
         font-weight: 700;
         font-size: 20px;
         line-height: 24px;
@@ -296,7 +293,6 @@
       }
 
       &-text {
-        font-family: $fontMain;
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;
@@ -317,7 +313,6 @@
 
       &-list {
         margin-left: 20px;
-        font-family: $fontMain;
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;
