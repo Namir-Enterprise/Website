@@ -1,6 +1,10 @@
 .services {
   margin-bottom: 80px;
 
+  &:before {
+    @include anchorForLink;
+  }
+
   .inner {
     position: relative;
 
