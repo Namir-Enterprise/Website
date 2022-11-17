@@ -233,8 +233,8 @@ h2 {
 @mixin anchorForLink {
   display: block;
   content: '';
-  height: 120px;
-  margin: -120px 0 0;
+  height: 100px;
+  margin: -100px 0 0;
 
   @media (max-width: $bp1024) {
     height: 90px;

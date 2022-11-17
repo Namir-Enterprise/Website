@@ -10,17 +10,17 @@ btnLink.addEventListener('click', (event) => {
   btnLink.classList.toggle('open');
 });
 
-document.addEventListener('scroll', () => {
+const closeDropdownMenu = () => {
   subMenu.classList.remove('open');
   arrowBtn.classList.remove('active');
   btnLink.classList.remove('open');
-});
+};
+
+document.addEventListener('scroll', () => closeDropdownMenu());
 
 document.addEventListener('click', (event) => {
   const withinBoundaries = event.composedPath().includes(btnLink);
   if (!withinBoundaries) {
-    subMenu.classList.remove('open');
-    arrowBtn.classList.remove('active');
-    btnLink.classList.remove('open');
+    closeDropdownMenu();
   }
 });
