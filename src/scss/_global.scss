@@ -170,6 +170,11 @@ body {
   }
 }
 
+input,
+textarea {
+  font-family: $fontMain;
+}
+
 // Typography
 h1 {
   font-weight: 300;
@@ -250,5 +255,61 @@ h2 {
 @media (prefers-reduced-motion) {
   * {
     transition: none;
+  }
+}
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
+  }
+
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  picture {
+    display: none;
+  }
+
+  .banner .inner {
+    &::after,
+    &::before {
+      content: '';
+    }
+  }
+
+  .banner__scroll {
+    display: none;
+  }
+
+  .technology__img {
+    opacity: 1;
   }
 }

@@ -59,6 +59,10 @@
 
       @media (max-width: $bp880) {
         margin: 0 auto;
+        padding: 22px 30px;
+      }
+      @media (max-width: $bp320) {
+        padding: 18px 20px;
       }
     }
   }
@@ -81,16 +85,19 @@
         opacity: 0.8;
       }
       100% {
-        transform: translateY(3px) rotate(90deg);
+        transform: translateY(15px) rotate(90deg);
         opacity: 1;
       }
     }
 
-    @media (max-width: $bp880) {
-      margin-top: 200px;
+    @media (max-width: $bp1380) {
+      bottom: 80px;
     }
     @media (max-width: $bp1380) {
-      bottom: 65px;
+      bottom: 115px;
+    }
+    @media (max-width: $bp400) {
+      right: -35px;
     }
     @media (max-width: $bp345) {
       display: none;

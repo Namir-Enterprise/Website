@@ -105,9 +105,7 @@
         border-width: 0 0 0 1px;
       }
     }
-    @media (max-width: $bp700) {
-      pointer-events: none;
-    }
+
     @media (max-width: $bp480) {
       padding: 45px 30px;
     }
@@ -135,7 +133,9 @@
     transition: all 0.3s linear;
 
     @media (max-width: $bp700) {
-      display: none;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 
@@ -144,6 +144,12 @@
     font-weight: 400;
     font-size: 24px;
     color: $gray;
+
+    @media (max-width: $bp700) {
+      margin-bottom: 0;
+      text-align: center;
+      font-size: 16px;
+    }
   }
 
   &__text {
@@ -155,6 +161,9 @@
 
     @media (max-width: $bp1380) {
       font-size: 15px;
+    }
+    @media (max-width: $bp700) {
+      display: none;
     }
   }
 }

@@ -77,6 +77,8 @@ class Select {
   select(id) {
     this.selectedId = id;
     this.$value.textContent = this.current.value;
+    this.$value.style.fontSize = '20px';
+    this.$value.style.color = '#dadada';
 
     this.$el
       .querySelectorAll(`[data-type="item"]`)
@@ -111,13 +113,14 @@ const select = new Select('#select', {
   placeholder: 'Тип сайту:',
   selectedId: '1',
   data: [
-    { id: '1', value: 'Лендінг' },
-    { id: '2', value: 'Інтернет-магазин на OpenCart' },
-    { id: '3', value: 'Інтернет-магазин під ключ' },
-    { id: '4', value: 'Розробка сайту на CMS Statamic' },
-    { id: '5', value: 'Розробка дизайну' },
-    { id: '6', value: 'Розробка мобільного додатку' },
-    { id: '7', value: 'Розробка CRM систем' },
+    { id: '1', value: '-' },
+    { id: '2', value: 'Лендінг' },
+    { id: '3', value: 'Інтернет-магазин на OpenCart' },
+    { id: '4', value: 'Інтернет-магазин під ключ' },
+    { id: '5', value: 'Розробка сайту на CMS Statamic' },
+    { id: '6', value: 'Розробка дизайну' },
+    { id: '7', value: 'Розробка мобільного додатку' },
+    { id: '8', value: 'Розробка CRM систем' },
   ],
   onSelect(item) {
     const input = document.querySelector('.hidden__input');
