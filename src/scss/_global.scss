@@ -26,19 +26,19 @@ body {
 
 // Button
 .main-btn {
-  font-family: $fontMain;
   position: relative;
   display: inline-block;
   padding: 22px 55px;
-  border: 1px solid $orange;
-  border-radius: 3px;
-  background: $orange;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
+  font-family: $fontMain;
   text-transform: uppercase;
-  color: $black;
   white-space: nowrap;
+  color: $black;
+  background: $orange;
+  border: 1px solid $orange;
+  border-radius: 3px;
   transition: all 0.3s;
 
   @media (max-width: $bp700) {
@@ -49,8 +49,8 @@ body {
 
   &:hover {
     border: 1px solid transparent;
-    background: transparent;
     color: $gray;
+    background: transparent;
 
     .line-1 {
       animation: move1 1500ms ease;
@@ -75,29 +75,29 @@ body {
   .line-3,
   .line-4 {
     content: '';
-    display: block;
     position: absolute;
+    display: block;
     background-color: $orange;
   }
   .line-1 {
-    width: 1px;
-    left: 0;
     bottom: 0;
+    left: 0;
+    width: 1px;
   }
   .line-2 {
-    height: 1px;
-    left: 0;
     top: 0;
+    left: 0;
+    height: 1px;
   }
   .line-3 {
-    width: 1px;
-    right: 0;
     top: 0;
+    right: 0;
+    width: 1px;
   }
   .line-4 {
-    height: 1px;
     right: 0;
     bottom: 0;
+    height: 1px;
   }
 }
 
@@ -177,13 +177,12 @@ textarea {
 
 // Typography
 h1 {
+  max-width: 980px;
+  margin-bottom: 40px;
   font-weight: 300;
   font-size: 96px;
   line-height: 99.99%;
   color: $gray;
-  margin-bottom: 40px;
-
-  max-width: 980px;
 
   @media (max-width: $bp1100) {
     font-size: 80px;
@@ -226,18 +225,18 @@ h2 {
 
   &::after {
     content: '';
-    width: 56px;
-    height: 1px;
     position: absolute;
     bottom: -15px;
     left: 0;
+    width: 56px;
+    height: 1px;
     background-color: $orange;
   }
 }
 
 @mixin anchorForLink {
-  display: block;
   content: '';
+  display: block;
   height: 100px;
   margin: -100px 0 0;
 
@@ -262,8 +261,8 @@ h2 {
   *,
   *::before,
   *::after {
-    background: #fff !important;
     color: #000 !important;
+    background: #fff !important;
     box-shadow: none !important;
     text-shadow: none !important;
   }

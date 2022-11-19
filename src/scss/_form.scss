@@ -13,8 +13,8 @@
     margin: 90px 0 95px;
 
     @media (max-width: $bp600) {
-      margin: 15px 0 50px;
       max-width: inherit;
+      margin: 15px 0 50px;
     }
   }
 
@@ -44,18 +44,18 @@
   }
 
   input {
-    background: transparent;
-    outline: none;
-    border-bottom: 1px solid $gray;
-    min-width: 348px;
-    max-width: 420px;
-    width: 100%;
-    padding-bottom: 15px;
     position: relative;
+    width: 100%;
+    max-width: 420px;
+    min-width: 348px;
+    padding-bottom: 15px;
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
     color: $gray;
+    background: transparent;
+    border-bottom: 1px solid $gray;
+    outline: none;
 
     @media (max-width: $bp600) {
       min-width: 100%;
@@ -89,14 +89,14 @@
 
   label {
     position: absolute;
-    left: 0;
     bottom: 5px;
-    transform-origin: 0 0;
-    transition: all 0.3s ease-in-out;
+    left: 0;
     font-weight: 300;
     font-size: 32px;
     line-height: 38px;
     color: $gray_text;
+    transition: all 0.3s ease-in-out;
+    transform-origin: 0 0;
     cursor: text;
 
     @media (max-width: $bp600) {
@@ -113,14 +113,14 @@
     min-width: 750px;
     min-height: 49px;
     max-height: 300px;
-    outline: none;
-    resize: vertical;
-    border-bottom: 1px solid $gray;
-    background: transparent;
     font-weight: 300;
     font-size: 20px;
     line-height: 24px;
+    resize: vertical;
     color: $gray;
+    background: transparent;
+    border-bottom: 1px solid $gray;
+    outline: none;
 
     @media (max-width: $bp880) {
       min-width: 100%;
@@ -144,11 +144,11 @@
   $height: 49px;
 
   .select {
+    position: relative;
+    z-index: 9;
     width: 100%;
     max-width: 425px;
-    position: relative;
     white-space: nowrap;
-    z-index: 9;
 
     @media (max-width: $bp1360) {
       order: 1;
@@ -165,13 +165,13 @@
 
     &__backdrop {
       position: fixed;
-      left: 0;
       top: 0;
       right: 0;
       bottom: 0;
-      background: transparent;
+      left: 0;
       z-index: -1;
       display: none;
+      background: transparent;
     }
 
     &.open {
@@ -190,40 +190,39 @@
 
     &__input {
       position: relative;
-      border-bottom: 1px solid $gray;
-      height: $height;
-      align-items: center;
-      padding-right: 45px;
-      cursor: pointer;
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      height: $height;
+      padding-right: 45px;
+      border-bottom: 1px solid $gray;
+      cursor: pointer;
 
       &::before {
         content: '';
+        position: absolute;
+        right: 40px;
         width: 1px;
         height: 27px;
         background: $gray_text;
-        position: absolute;
-        right: 40px;
       }
 
       .select__arrow {
         pointer-events: none;
-        position: relative;
-        display: inline-block;
-        width: 0.82rem;
-        height: 1rem;
         position: absolute;
         top: 60%;
         right: 10px;
+        display: inline-block;
+        width: 0.82rem;
+        height: 1rem;
         transform: scale(1.5) translateY(-50%);
 
         span {
           position: absolute;
           top: 0.5rem;
+          display: inline-block;
           width: 0.5rem;
           height: 0.05rem;
-          display: inline-block;
           background-color: $gray_text;
           transition: all 0.2s ease;
         }
@@ -250,15 +249,13 @@
       }
 
       span {
-        white-space: nowrap;
-        overflow: hidden;
         pointer-events: none;
+        overflow: hidden;
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
+        white-space: nowrap;
         color: $gray_text;
-        // color: #dadada;
-        // font-size: 20px;
 
         @media (max-width: $bp600) {
           font-size: 20px;
@@ -268,13 +265,13 @@
     }
 
     &__dropdown {
-      display: none;
       position: absolute;
-      border-radius: 5px;
-      top: $height;
-      left: 0;
       right: 0;
+      left: 0;
+      display: none;
+      top: $height;
       overflow-y: auto;
+      border-radius: 5px;
       background: $black;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
@@ -301,7 +298,7 @@
 
           &:hover {
             background-color: #383839;
-            transition: 0.15 background-color ease-in;
+            transition: 0.15s background-color ease-in;
           }
         }
       }

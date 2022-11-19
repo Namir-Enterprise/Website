@@ -1,15 +1,15 @@
 // mf
 .modal__wrapper {
   position: fixed;
-  left: 0;
   top: 0;
-  bottom: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
+  bottom: 0;
+  left: 0;
   z-index: 15;
   display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
 
   .modal {
     display: flex;
@@ -39,7 +39,6 @@
 
     &__title {
       margin-bottom: 25px;
-      text-align: center;
       font-weight: 400;
       font-size: 32px;
       line-height: 100%;
@@ -48,8 +47,8 @@
     }
 
     &__body {
-      margin-bottom: 65px;
       max-width: 511px;
+      margin-bottom: 65px;
 
       p {
         font-weight: 400;
@@ -63,14 +62,14 @@
     &__close {
       max-width: 312px;
       padding: 20px 95px;
-      background: #27ae60;
-      border: 3px solid #27ae60;
-      border-radius: 3px;
       font-weight: 500;
       font-size: 18px;
       line-height: 21px;
       text-transform: uppercase;
       color: #f6f6f6;
+      background: #27ae60;
+      border: 3px solid #27ae60;
+      border-radius: 3px;
       cursor: pointer;
     }
   }

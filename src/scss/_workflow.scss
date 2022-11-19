@@ -5,7 +5,7 @@
     padding: 180px 40px;
 
     @media (max-width: $bp991) {
-      padding: 140px 40px; //need to synchronize
+      padding: 140px 40px;
     }
     @media (max-width: $bp600) {
       padding: 80px 30px;
@@ -14,10 +14,10 @@
 
   .tabs {
     position: relative;
+    z-index: 2;
     display: flex;
     width: 100%;
     margin-top: 55px;
-    z-index: 2;
 
     @media (max-width: $bp991) {
       flex-direction: column;
@@ -27,8 +27,8 @@
       position: absolute;
       top: 45%;
       left: 47%;
-      transform: translate(-50%, -50%);
       z-index: 0;
+      transform: translate(-50%, -50%);
       pointer-events: none;
 
       @media (max-width: $bp600) {
@@ -38,13 +38,13 @@
     }
 
     &__header {
-      width: 100%;
-      max-width: 400px;
+      z-index: 1;
       display: flex;
-      row-gap: 60px;
       flex-direction: column;
       justify-content: center;
-      z-index: 1;
+      row-gap: 60px;
+      width: 100%;
+      max-width: 400px;
 
       @media (max-width: $bp991) {
         flex-wrap: wrap;
@@ -55,35 +55,35 @@
 
       &-navigation {
         position: relative;
-        width: 2px;
-        height: 576px;
+        z-index: 5;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 2px;
+        height: 576px;
         border-radius: 10px;
         background: rgba(218, 218, 218, 0.7);
-        z-index: 5;
 
         @media (max-width: $bp991) {
           display: block;
-          background: none;
           width: 100%;
           height: inherit;
+          background: none;
         }
       }
 
       &-list {
         display: flex;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
 
         @media (max-width: $bp991) {
           flex-wrap: nowrap;
           flex-direction: row;
-          overflow: auto;
-          padding-bottom: 15px;
-          min-height: 85px;
           height: 100%;
+          min-height: 85px;
+          padding-bottom: 15px;
+          overflow: auto;
         }
         @media (max-width: $bp600) {
           padding-bottom: 0px;
@@ -92,12 +92,12 @@
 
       &-item {
         position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
-        list-style: none;
         height: 96px;
-        z-index: 1;
+        list-style: none;
         cursor: pointer;
 
         @media (max-width: $bp991) {
@@ -116,33 +116,36 @@
         &.active {
           .tabs__header-number {
             opacity: 1;
-            transform: translateY(0);
             transition: 0.15s 0.27s ease-in-out;
+            transform: translateY(0);
           }
 
-          @media (max-width: $bp991) {
-            .tabs__header-caption {
+          .tabs__header-caption {
+            font-weight: 500;
+            color: $gray;
+
+            @media (max-width: $bp991) {
+              font-weight: 700;
+              padding: 11px 20px;
               background: $gray_text;
               border-radius: 27px;
-              padding: 11px 20px;
-              font-weight: 700;
             }
           }
         }
       }
 
       &-number {
-        width: 100%;
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        opacity: 0;
-        transform: translateY(-5px);
+        width: 100%;
+        height: 100%;
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
         color: $dark;
+        opacity: 0;
+        transform: translateY(-5px);
 
         @media (max-width: $bp991) {
           display: none;
@@ -155,9 +158,9 @@
         font-weight: 300;
         font-size: 32px;
         line-height: 38px;
-        color: $gray;
         white-space: nowrap;
-        transition: 0.4s;
+        color: $light_gray_text;
+        transition: 0.4s ease-in-out;
 
         @media (max-width: $bp991) {
           position: relative;
@@ -174,8 +177,8 @@
         top: 0;
         width: 96px;
         height: 96px;
-        background: #d9d9d9;
         border-radius: 50%;
+        background: #d9d9d9;
         transition: 0.5s;
 
         @media (max-width: $bp991) {
@@ -184,27 +187,26 @@
 
         &::after {
           content: '';
+          position: absolute;
+          top: 50%;
+          left: 90px;
           width: 90px;
           height: 5px;
-          position: absolute;
-          left: 90px;
-          top: 50%;
-          transform: translateY(50%);
           background-color: $gray;
+          transform: translateY(50%);
         }
       }
     }
 
     &__content {
-      width: 100%;
+      z-index: 1;
       display: flex;
       justify-content: right;
       align-items: center;
-      z-index: 1;
+      width: 100%;
       opacity: 1;
-      transform: scale(1);
-      // animation: showContent 0.7s forwards;
       animation-timing-function: ease-in;
+      transform: scale(1);
 
       @media (max-width: $bp991) {
         justify-content: center;
@@ -212,13 +214,13 @@
 
       @keyframes showContent {
         0% {
-          transform: scale(0.85);
           opacity: 0.3;
+          transform: scale(0.85);
         }
         100% {
+          opacity: 1;
           transform: scale(1);
           transform-origin: center bottom;
-          opacity: 1;
         }
       }
 
@@ -236,24 +238,24 @@
       &-container-icon {
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
         left: -100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         width: 100%;
         max-width: 155px;
         height: 100%;
         max-height: 200px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 10px;
         background: $black;
+        border-radius: 10px;
+        transform: translateY(-50%);
         pointer-events: none;
 
         @media (max-width: $bp600) {
-          max-width: 130px;
-          max-height: 95px;
           top: -60px;
           left: 50%;
+          max-width: 130px;
+          max-height: 95px;
           transform: translateX(-50%);
         }
 
@@ -267,9 +269,9 @@
       &-wrapper {
         width: 100%;
         max-width: 660px;
-        background: $gray;
         padding: 40px 60px 40px 85px;
         border-radius: 10px;
+        background: $gray;
 
         @media (max-width: $bp768) {
           padding: 35px 40px 35px 85px;
@@ -296,7 +298,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;
-        color: $black;
+        color: $black_main_text;
 
         @media (max-width: $bp600) {
           font-size: 16px;
@@ -316,7 +318,7 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 145%;
-        color: $black;
+        color: $black_main_text;
 
         @media (max-width: $bp600) {
           font-size: 16px;

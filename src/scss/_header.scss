@@ -1,24 +1,14 @@
 // Header
 .header {
-  height: 49px;
-  width: 100%;
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 49px;
   border-bottom: solid $gray_text 1px;
   backdrop-filter: blur(10px);
   background: rgba(12, 12, 12, 0.75);
-  transition: transform 0.2s linear;
-  // Delay on show header
-  transition-delay: 0.7s;
-  z-index: 10;
-
-  &__hide {
-    transform: translateY(-49px);
-    transition: transform 0.2s linear;
-    // Delay on hide
-    transition-delay: 0.3s;
-  }
 
   .navbar {
     display: flex;
@@ -42,16 +32,16 @@
       }
 
       &-btn {
+        z-index: 1;
         display: flex;
         align-items: center;
         padding: 12px 13px;
         border-radius: 3px 3px 0 0;
         transition: all 0.3s;
-        z-index: 1;
 
         &:hover {
-          background-color: $gray-text;
           border-radius: 3px;
+          background-color: $gray-text;
         }
 
         &__text {
@@ -70,10 +60,10 @@
 
           span {
             position: absolute;
+            display: inline-block;
             top: 0.5rem;
             width: 0.5rem;
             height: 0.05rem;
-            display: inline-block;
             background-color: #efefef;
             transition: all 0.2s ease;
           }
@@ -102,24 +92,24 @@
 
       .submenu {
         position: absolute;
+        z-index: -10;
+        text-align: center;
         visibility: hidden;
         opacity: 0;
-        transform: translateY(-3em);
+        border-radius: 0 0 3px 3px;
         background-color: $dark;
         transition: all 0.3s ease 0s, visibility 0s linear 0.3s,
           z-index 0s linear 0.01s;
-        z-index: -10;
-        text-align: center;
-        border-radius: 0 0 3px 3px;
+        transform: translateY(-3em);
 
         &__link {
           display: inherit;
           padding: 12px 21px;
-          background-color: $black;
-          border-radius: 3px;
           font-weight: 300;
           font-size: 16px;
           color: $gray;
+          background-color: $black;
+          border-radius: 3px;
           transition: all 0.3s;
 
           &:hover {
@@ -131,9 +121,9 @@
           visibility: visible;
           opacity: 1;
           z-index: 1;
-          transform: translateY(0);
-          transition-delay: 0s, 0s, 0s;
           background-color: $black;
+          transition-delay: 0s, 0s, 0s;
+          transform: translateY(0);
         }
       }
     }
@@ -150,22 +140,23 @@
 
     &__item-link {
       display: inline-block;
-      color: $gray;
       font-weight: 300;
       font-size: 16px;
-      transition: font-weight 0.2s ease-in-out;
+      color: $light_gray_text;
+      transition: font-weight 0.3s ease-in-out;
 
       &::before {
         content: attr(title);
         display: block;
-        font-weight: 600;
         height: 0;
+        font-weight: 700;
         overflow: hidden;
         visibility: hidden;
       }
 
       &:hover {
-        font-weight: 600;
+        font-weight: 700;
+        color: $gray;
       }
     }
 
@@ -182,50 +173,50 @@
   @media screen and (max-width: $burgerBreakpoint) {
     .menu {
       position: fixed;
-      background: #131418;
-      text-align: center;
-      left: 0;
+      display: none;
       top: 0;
+      left: 0;
       height: 100vh;
       width: 100vw;
-      display: none;
+      text-align: center;
+      background: #131418;
 
       &.active {
-        display: flex;
         left: 0;
         top: 0;
-        height: 100vh;
-        width: 100vw;
+        z-index: 22;
+        display: flex;
         flex-direction: column;
-        pointer-events: all;
         justify-content: center;
         align-items: center;
-        z-index: 22;
+        width: 100vw;
+        height: 100vh;
         animation: fade 0.1s linear;
+        pointer-events: all;
       }
     }
 
     .burger {
-      display: block;
       position: relative;
-      height: 20px;
-      width: 30px;
       z-index: 102;
+      display: block;
+      width: 30px;
+      height: 20px;
       cursor: pointer;
 
       &.active-burger {
         &:before {
-          background: $burgerActiveColor;
-          transform: rotate(45deg);
-          transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
           top: 8px;
+          background: $burgerActiveColor;
+          transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+          transform: rotate(45deg);
         }
 
         &:after {
-          background: $burgerActiveColor;
-          transform: rotate(-45deg);
           bottom: 10px;
+          background: $burgerActiveColor;
           transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+          transform: rotate(-45deg);
         }
 
         & span {
@@ -237,8 +228,8 @@
       &:after {
         content: '';
         position: absolute;
-        height: 2px;
         width: 100%;
+        height: 2px;
         background: $burgerColor;
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
       }
@@ -256,10 +247,10 @@
         top: 9px;
         right: 0;
         width: 100%;
-        background: $burgerColor;
         height: 2px;
-        transform: scale(1);
+        background: $burgerColor;
         transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+        transform: scale(1);
       }
     }
 
@@ -270,8 +261,8 @@
 
     // .menu__link
     .menu__item-link {
-      color: white;
       font-size: 24px;
+      color: #fff;
     }
   }
 }

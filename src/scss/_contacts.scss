@@ -1,10 +1,10 @@
 .contacts {
-  background-color: $gray;
   padding: 60px 0 80px 0;
+  background-color: $gray;
 
   &__title {
-    color: $black;
     margin-bottom: 60px;
+    color: $black;
 
     @media (max-width: $bp480) {
       margin-bottom: 25px;
@@ -12,9 +12,9 @@
   }
 
   &__btn {
-    background-color: transparent;
     border: 3px solid $orange;
     border-radius: 3px;
+    background-color: transparent;
 
     &:hover {
       border: 3px solid transparent;
@@ -28,12 +28,12 @@
       font-size: 16px;
     }
     @media (max-width: $bp365) {
-      font-size: 14px;
       padding: 10px 12px;
+      font-size: 14px;
     }
     @media (max-width: $bp320) {
-      font-size: 13px;
       padding: 10px 10px;
+      font-size: 13px;
     }
   }
 

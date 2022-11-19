@@ -23,8 +23,8 @@
   &__img-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 40px;
     gap: 40px;
+    margin-bottom: 40px;
 
     @media (max-width: $bp880) {
       gap: 30px;
@@ -36,8 +36,8 @@
   }
 
   &__img-item {
-    max-width: 48%;
     position: relative;
+    max-width: 48%;
 
     @media (max-width: $bp700) {
       max-width: 100%;
@@ -51,20 +51,20 @@
   }
 
   &__content {
+    position: absolute;
+    top: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    top: 50%;
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
     height: 100%;
     padding: 0 15px;
-    transform: translate(0, -50%);
-    opacity: 0;
     background: rgba(185, 185, 185, 0.6);
-    backdrop-filter: blur(16.5px);
+    opacity: 0;
     transition: all 0.3s ease;
+    backdrop-filter: blur(16.5px);
+    transform: translate(0, -50%);
   }
 
   &__img-title {
@@ -95,16 +95,16 @@
   }
 
   &__btn {
-    max-width: 620px;
-    min-width: 260px;
-    min-height: 260px;
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto;
-    text-align: center;
+    max-width: 620px;
+    min-width: 260px;
+    min-height: 260px;
     font-weight: 300;
     font-size: 32px;
+    text-align: center;
     text-decoration-line: underline;
     color: $gray;
     border: 2px solid #d9d9d9;

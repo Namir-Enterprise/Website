@@ -24,11 +24,11 @@
   }
 
   &__item {
-    padding: 62px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 62px 40px;
 
     &:hover {
       .technology {
@@ -37,45 +37,45 @@
         }
 
         &__content {
-          visibility: visible;
           opacity: 1;
+          visibility: visible;
         }
       }
     }
 
     &::before {
       content: '';
-      width: 100%;
-      height: calc(100% - 10px);
-      margin: auto;
       position: absolute;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 100%;
+      height: calc(100% - 10px);
+      margin: auto;
       border-width: 0 1px 0 1px;
       border-style: solid;
       border-color: $gray;
       opacity: 0.4;
-      pointer-events: none;
       transition: all 0.3s ease-in-out;
+      pointer-events: none;
     }
 
     &::after {
       content: '';
-      height: 100%;
-      width: calc(100% - 10px);
-      margin: auto;
       position: absolute;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
+      width: calc(100% - 10px);
+      height: 100%;
+      margin: auto;
       border-width: 1px 0 1px 0;
       border-style: solid;
       border-color: $gray;
       opacity: 0.4;
-      pointer-events: none;
       transition: border-color 0.3s, opacity 0.6s;
+      pointer-events: none;
     }
 
     @media (min-width: 1355px) {
@@ -126,11 +126,11 @@
 
   &__content {
     position: absolute;
-    left: 20px;
     top: 20px;
+    left: 20px;
     opacity: 0;
-    cursor: default;
     transition: all 0.3s linear;
+    cursor: default;
 
     @media (max-width: $bp700) {
       left: 50%;
@@ -153,11 +153,11 @@
   }
 
   &__text {
+    padding-right: 20px;
     font-weight: 300;
     font-size: 18px;
     line-height: 100%;
     color: $light_gray_text;
-    padding-right: 20px;
 
     @media (max-width: $bp1380) {
       font-size: 15px;

@@ -43,9 +43,9 @@
 
       &__item {
         margin-bottom: 20px;
-        color: $light_gray_text;
         font-weight: 300;
         font-size: 16px;
+        color: $light_gray_text;
         transition: all 0.3s ease;
 
         &:hover {
@@ -61,12 +61,13 @@
 
       &__item-wrapper {
         margin: 20px 0;
+
         @media (max-width: 594px) {
+          box-sizing: content-box;
           max-height: 0;
           opacity: 0;
           overflow: hidden;
           transition: all 0.3s ease-out;
-          box-sizing: content-box;
         }
       }
 
@@ -83,9 +84,9 @@
         span {
           position: absolute;
           top: 0.5rem;
+          display: inline-block;
           width: 0.5rem;
           height: 0.05rem;
-          display: inline-block;
           background-color: #efefef;
           transition: all 0.2s ease;
         }
@@ -172,11 +173,11 @@
       }
 
       &__rights {
-        display: block;
-        width: 170px;
         position: absolute;
         bottom: 0;
         right: 0;
+        display: block;
+        width: 170px;
         font-weight: 300;
         font-size: 16px;
         line-height: 19px;

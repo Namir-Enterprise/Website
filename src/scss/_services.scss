@@ -12,7 +12,6 @@
       content: url(../img/blur-right.svg);
       position: absolute;
       left: -33%;
-      // top: 15%;
       z-index: -1;
 
       @media (max-width: $bp1024) {
@@ -26,8 +25,8 @@
 
   &__blur {
     position: absolute;
-    left: -27%;
     top: 20%;
+    left: -27%;
   }
 
   &__wrapper {
@@ -84,11 +83,11 @@
         }
 
         &__control {
-          margin-bottom: 20px;
-          width: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          width: 100%;
+          margin-bottom: 20px;
           background-color: transparent;
           cursor: pointer;
         }
@@ -96,8 +95,8 @@
         &__title {
           font-weight: 300;
           font-size: 32px;
-          color: $light_gray_text;
           text-align: left;
+          color: $light_gray_text;
 
           @media (max-width: $bp768) {
             font-size: 25px;
@@ -112,34 +111,33 @@
           display: inline-block;
           width: 30px;
           height: 30px;
-          padding-left: 30px;
           margin-left: 10px;
+          padding-left: 30px;
 
-          &::before {
+          &::before,
+          &::after {
             content: '';
             position: absolute;
-            left: 50%;
             top: 50%;
-            width: 50%;
-            height: 2px;
+            left: 50%;
             background-color: $light_gray_text;
             transform: translate(-50%, -50%);
           }
 
+          &::before {
+            width: 50%;
+            height: 2px;
+          }
+
           &::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
             width: 2px;
             height: 50%;
-            background-color: $light_gray_text;
-            transform: translate(-50%, -50%);
             transition: all 0.3s ease-out;
           }
         }
 
         &__content {
+          box-sizing: content-box;
           max-height: 0;
           padding: 0;
           opacity: 0;
@@ -149,11 +147,10 @@
           line-height: 145%;
           color: $light_gray_text;
           transition: all 0.3s ease-out;
-          box-sizing: content-box;
 
           @media (max-width: $bp480) {
-            line-height: 145%;
             font-size: 16px;
+            line-height: 145%;
           }
         }
       }

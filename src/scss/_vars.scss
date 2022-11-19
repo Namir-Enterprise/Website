@@ -26,6 +26,7 @@ $bp320: 320 + px;
 // Colors
 $dark: #0c0c0c;
 $black: #1d1d1f;
+$black_main_text: #464646;
 $orange: #fd6807;
 $light_orange: #ffa010;
 $gray: #dadada;
@@ -35,7 +36,7 @@ $gray_text: #69696a;
 // Burger Menu
 $burgerBreakpoint: $bp768;
 $burgerColor: $gray;
-$burgerActiveColor: 'white';
+$burgerActiveColor: #fff;
 
 // Fonts
 $fontMain: 'Rubik', sans-serif;
