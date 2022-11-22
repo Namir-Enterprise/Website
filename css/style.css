@@ -327,7 +327,8 @@ body.locked {
 }
 
 input,
-textarea {
+textarea,
+button {
   font-family: "Rubik", sans-serif;
 }
 
@@ -1948,37 +1949,28 @@ h2 {
   width: 100%;
   max-width: 680px;
   max-height: 430px;
-  padding: 55px 25px;
+  padding: 100px 25px;
   border-radius: 10px;
   background: #f7f7f7;
 }
 
-.modal__wrapper .modal.error .modal__title {
-  color: #f32e2e;
-}
-
 .modal__wrapper .modal.error .modal__close {
-  background: #f32e2e;
-  border: 3px solid #f32e2e;
-}
-
-.modal__wrapper .modal__picture {
-  margin-bottom: 30px;
-  pointer-events: none;
+  background: #fd6807;
+  border: 3px solid #fd6807;
 }
 
 .modal__wrapper .modal__title {
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
   text-align: center;
-  color: #27ae60;
+  color: #1d1d1f;
 }
 
 .modal__wrapper .modal__body {
   max-width: 511px;
-  margin-bottom: 65px;
+  margin-bottom: 60px;
 }
 
 .modal__wrapper .modal__body p {
@@ -1986,12 +1978,12 @@ h2 {
   font-size: 20px;
   line-height: 100%;
   text-align: center;
-  color: #161616;
+  color: #464646;
 }
 
 .modal__wrapper .modal__close {
   max-width: 312px;
-  padding: 20px 95px;
+  padding: 20px 59px;
   font-weight: 500;
   font-size: 18px;
   line-height: 21px;
@@ -2133,6 +2125,11 @@ h2 {
 
   .portfolio__btn {
     font-size: 24px;
+  }
+
+  .modal__wrapper .modal {
+    margin: 0 30px;
+    padding: 80px 25px;
   }
 }
 
@@ -2635,6 +2632,32 @@ h2 {
 
   .form button {
     padding: 21px 28px;
+  }
+
+  .modal__wrapper .modal {
+    max-width: 367px;
+    padding: 75px 25px;
+  }
+
+  .modal__wrapper .modal.error .modal__close {
+    padding: 14px 30px;
+  }
+
+  .modal__wrapper .modal__title {
+    margin-bottom: 40px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+
+  .modal__wrapper .modal__body p {
+    font-size: 16px;
+  }
+
+  .modal__wrapper .modal__close {
+    max-width: 233px;
+    padding: 14px 70px;
+    font-size: 16px;
+    line-height: 19px;
   }
 }
 

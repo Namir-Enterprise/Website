@@ -5877,15 +5877,15 @@ const mask = IMask(phone, maskOptions);
 const typeModal = {
   success: {
     status: 'success',
-    picture: 'icon_success',
     title: 'Заявку успішно прийнято!',
     text: 'Дякуємо за довіру! Ми обов’язково обробимо заявку і зв’яжемось з вами найближчим часом',
+    button: 'Зрозуміло',
   },
   error: {
     status: 'error',
-    picture: 'icon_error',
-    title: 'Помилка!',
+    title: 'Спробуйте ще раз.',
     text: 'Щось пішло не так. Будь ласка, спробуйте відправити дані ще раз.',
+    button: 'Спробувати знову',
   },
 };
 
@@ -5897,12 +5897,11 @@ const createModal = (
   const modalWindow = `
           <div class="modal__wrapper">
           <div class="modal ${type.status}">
-              <img src="./img/icons/${type.picture}.svg" class="modal__picture" alt="icon">
               <div class="modal__title"><span>${type.title}</span> </div>
               <div class="modal__body">
                   <p class="modal__body-text">${type.text}</p>
               </div>
-              <button class="modal__close">Зрозуміло</button>
+              <button class="modal__close">${type.button}</button>
           </div>
       </div>
           `;
