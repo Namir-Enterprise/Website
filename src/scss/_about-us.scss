@@ -9,6 +9,11 @@
       display: flex;
       gap: 125px;
       margin-bottom: 80px;
+
+      @media (max-width: 1160px) {
+         flex-wrap: wrap;
+         gap: 20px;
+      }
    }
 
    &__title {
@@ -23,6 +28,12 @@
       display: flex;
       margin-bottom: 165px;
       justify-content: space-between;
+
+      @media (max-width: 1160px) {
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 40px;
+      }
    }
 
    &__item {
@@ -34,7 +45,6 @@
 
       &:hover {
          border: 1px solid rgba(253, 104, 7, 0.7);
-
          .about-us__img {
             filter: invert(45%) sepia(64%) saturate(2807%) hue-rotate(358deg) brightness(101%) contrast(98%);
             opacity: 0.7;
