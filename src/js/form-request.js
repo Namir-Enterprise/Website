@@ -1,4 +1,4 @@
-const URL = 'https://reqres.in/api/users/2';
+const URL = '';
 const METHOD_POST = 'POST';
 
 const form = document.querySelector('form');
