@@ -13,55 +13,28 @@ const maskOptions = {
 const mask = IMask(phone, maskOptions);
 
 const typeModal = {
-  success: {
-    status: 'success',
-    title: 'Заявку успішно прийнято!',
-    text: 'Дякуємо за довіру! Ми обов’язково обробимо заявку і зв’яжемось з вами найближчим часом',
-    button: 'Зрозуміло',
-  },
-  error: {
-    status: 'error',
-    title: 'Спробуйте ще раз.',
-    text: 'Щось пішло не так. Будь ласка, спробуйте відправити дані ще раз.',
-    button: 'Спробувати знову',
-  },
+  success: '.modal__wrapper-success',
+  error: '.modal__wrapper-error',
 };
 
-const createModal = (
-  type,
-  modal = '.modal__wrapper',
-  close = '.modal__close'
-) => {
-  const modalWindow = `
-          <div class="modal__wrapper">
-          <div class="modal ${type.status}">
-              <div class="modal__title"><span>${type.title}</span> </div>
-              <div class="modal__body">
-                  <p class="modal__body-text">${type.text}</p>
-              </div>
-              <button class="modal__close">${type.button}</button>
-          </div>
-      </div>
-          `;
-  form.insertAdjacentHTML('afterend', modalWindow);
-
+const createModal = (modal, closeButtons = '.modal__close') => {
   (modal = document.querySelector(modal)),
-    (close = document.querySelector(close));
+    (closeButtons = document.querySelectorAll(closeButtons));
 
   modal.style.display = 'flex';
   body.classList.add('locked');
 
-  close.addEventListener('click', () => {
-    modal.style.display = 'none';
-    body.classList.remove('locked');
-    modal.remove();
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      modal.style.display = 'none';
+      body.classList.remove('locked');
+    });
   });
 
   modal.addEventListener('click', (event) => {
     if (event.target === modal) {
       modal.style.display = 'none';
       body.classList.remove('locked');
-      modal.remove();
     }
   });
 };

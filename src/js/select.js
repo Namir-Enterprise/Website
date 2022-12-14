@@ -1,129 +1,82 @@
-const getTemplate = (data = [], placeholder, selectedId) => {
-  let text = placeholder ?? 'placeholder не указан';
+function CustomSelect(options) {
+  const ENTER_KEY_CODE = 13;
+  const ESCAPE_KEY_CODE = 27;
+  const arrow = document.querySelector('[data-type="arrow"]');
+  const value = document.querySelector('[data-type="value"]');
+  const elem = options.elem;
 
-  const name = 'site-type';
-  const items = data.map((item) => {
-    let cls = '';
-    if (item.id === selectedId) {
-      text = item.value;
-      cls = 'selected';
+  elem.addEventListener('click', (event) => {
+    if (event.target.className == 'select__input') {
+      toggle();
+    } else if (event.target.tagName == 'LI') {
+      setValue(event.target.innerHTML, event.target.dataset.value);
+      value.style.fontSize = '20px';
+      value.style.color = '#dadada';
+      close();
     }
-    return `
-            <li class="select__item ${cls}" data-type="item" tabindex="0" role="option" data-id="${item.id}">${item.value}</li>
-        `;
   });
-  return `
-        <input type="hidden" name=${name} class="hidden__input" required>
-        <div class="select__backdrop" data-type="backdrop"></div>
-        <div class="select__input" data-type="input">
-            <span data-type="value">${placeholder}</span>
-            <span class="select__arrow" data-type="arrow" >
-              <span>
-              </span>
-            <span>
-            </span>
-        </span>
-        </div>
-        <div class="select__dropdown">
-            <ul class="select__list" role="listbox">
-                ${items.join('')}
-            </ul>
-        </div>
-    `;
-};
-class Select {
-  constructor(selector, options) {
-    this.$el = document.querySelector(selector);
-    this.options = options;
-    this.selectedId = options.selectedId;
 
-    this.render();
-    this.setup();
-  }
-
-  render() {
-    const { placeholder, data } = this.options;
-    this.$el.classList.add('select');
-    this.$el.setAttribute('tabindex', '0');
-    this.$el.innerHTML = getTemplate(data, placeholder, this.selectedId);
-  }
-  setup() {
-    this.clickHandler = this.clickHandler.bind(this);
-    this.$el.addEventListener('click', this.clickHandler);
-    this.$arrow = this.$el.querySelector('[data-type="arrow"]');
-    this.$value = this.$el.querySelector('[data-type="value"]');
-  }
-
-  clickHandler(event) {
-    const { type } = event.target.dataset;
-    if (type === 'input') {
-      this.toggle();
-    } else if (type === 'item') {
-      const id = event.target.dataset.id;
-      this.select(id);
-    } else if (type === 'backdrop') {
-      this.close();
+  // Accessible Drop Down
+  elem.addEventListener('keydown', (event) => {
+    if (event.keyCode === ENTER_KEY_CODE) {
+      open();
+      if (event.target.tagName == 'LI') {
+        setValue(event.target.innerHTML, event.target.dataset.value);
+        value.style.fontSize = '20px';
+        value.style.color = '#dadada';
+        close();
+      }
     }
+    if (event.keyCode === ESCAPE_KEY_CODE) {
+      toggle();
+    }
+  });
+
+  let isOpen = false;
+
+  function onDocumentClick(event) {
+    if (!elem.contains(event.target)) close();
   }
 
-  get isOpen() {
-    return this.$el.classList.contains('open');
-  }
+  const setValue = (title, value) => {
+    elem.querySelector('.title').innerHTML = title;
 
-  get current() {
-    return this.options.data.find((item) => item.id === this.selectedId);
-  }
+    let widgetEvent = new CustomEvent('select', {
+      bubbles: true,
+      detail: {
+        title: title,
+        value: value,
+      },
+    });
 
-  select(id) {
-    this.selectedId = id;
-    this.$value.textContent = this.current.value;
-    this.$value.style.fontSize = '20px';
-    this.$value.style.color = '#dadada';
+    elem.dispatchEvent(widgetEvent);
+  };
 
-    this.$el
-      .querySelectorAll(`[data-type="item"]`)
-      .forEach((el) => el.classList.remove('selected'));
-    this.$el.querySelector(`[data-id="${id}"]`).classList.add('selected');
+  const toggle = () => {
+    if (isOpen) close();
+    else open();
+  };
 
-    this.options.onSelect ? this.options.onSelect(this.current) : null;
-    this.close();
-  }
+  const open = () => {
+    elem.classList.add('open');
+    arrow.classList.add('open');
+    document.addEventListener('click', onDocumentClick);
+    isOpen = true;
+  };
 
-  toggle() {
-    this.isOpen ? this.close() : this.open();
-  }
-
-  open() {
-    this.$el.classList.add('open');
-    this.$arrow.classList.add('open');
-  }
-
-  close() {
-    this.$el.classList.remove('open');
-    this.$arrow.classList.remove('open');
-  }
-
-  destroy() {
-    this.$el.removeEventListener('click', this.clickHandler);
-    this.$el.innerHTML = '';
-  }
+  const close = () => {
+    elem.classList.remove('open');
+    arrow.classList.remove('open');
+    document.removeEventListener('click', onDocumentClick);
+    isOpen = false;
+  };
 }
 
-const select = new Select('#select', {
-  placeholder: 'Тип сайту:',
-  selectedId: '1',
-  data: [
-    { id: '1', value: '-' },
-    { id: '2', value: 'Лендінг' },
-    { id: '3', value: 'Інтернет-магазин на OpenCart' },
-    { id: '4', value: 'Інтернет-магазин під ключ' },
-    { id: '5', value: 'Розробка сайту на CMS Statamic' },
-    { id: '6', value: 'Розробка дизайну' },
-    { id: '7', value: 'Розробка мобільного додатку' },
-    { id: '8', value: 'Розробка CRM систем' },
-  ],
-  onSelect(item) {
-    const input = document.querySelector('.hidden__input');
-    input.value = item.value;
-  },
+const formSelect = new CustomSelect({
+  elem: document.querySelector('#select'),
+});
+
+document.addEventListener('select', (event) => {
+  const select = document.querySelector('#select-value');
+  select.setAttribute('value', `${event.detail.value}`);
 });

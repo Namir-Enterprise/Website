@@ -148,6 +148,7 @@
     z-index: 9;
     width: 100%;
     max-width: 425px;
+    min-width: 425px;
     white-space: nowrap;
 
     @media (max-width: $bp1360) {
@@ -155,23 +156,13 @@
     }
     @media (max-width: $bp600) {
       max-width: 100vw;
+      min-width: inherit;
     }
     @media (max-width: $bp428) {
       max-width: 85vw;
     }
     @media (max-width: $bp375) {
       max-width: 80vw;
-    }
-
-    &__backdrop {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      display: none;
-      background: transparent;
     }
 
     &.open {
@@ -181,10 +172,6 @@
 
       .select__input {
         border-bottom: 1px solid transparent;
-      }
-
-      .select__backdrop {
-        display: block;
       }
     }
 

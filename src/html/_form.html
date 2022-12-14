@@ -25,8 +25,40 @@
                             placeholder=" "></textarea>
                         <label for="details">Подробиці проекту</label>
                     </div>
-                    <div id="select">
-                        <input type="hidden" class="hidden__input">
+                    <div class="form__input-wrap">
+                        <div id="select" class="select" tabindex="0">
+                            <input type="hidden" name="site-type" class="hidden__input" id="select-value" required>
+                            <div class="select__input" data-type="input">
+                                <span data-type="value" class="title">Тип сайту:</span>
+                                <span class="select__arrow" data-type="arrow">
+                                    <span>
+                                    </span>
+                                    <span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="select__dropdown">
+                                <ul class="select__list" role="listbox">
+                                    <li data-value="-" class="select__item" tabindex="0" role="option">-</li>
+                                    <li data-value="Лендінг" class="select__item" tabindex="0" role="option">Лендінг
+                                    </li>
+                                    <li data-value="Інтернет-магазин на OpenCart" class="select__item" tabindex="0"
+                                        role="option">Інтернет-магазин
+                                        на OpenCart</li>
+                                    <li data-value="Інтернет-магазин під ключ" class="select__item" tabindex="0"
+                                        role="option">Інтернет-магазин
+                                        під ключ</li>
+                                    <li data-value="Розробка сайту на CMS Statamic" class="select__item" tabindex="0"
+                                        role="option">Розробка сайту на CMS Statamic</li>
+                                    <li data-value="Розробка дизайну" class="select__item" tabindex="0" role="option">
+                                        Розробка дизайну</li>
+                                    <li data-value="Розробка мобільного додатку" class="select__item" tabindex="0"
+                                        role="option">Розробка мобільного додатку</li>
+                                    <li data-value="Розробка CRM систем" class="select__item" tabindex="0"
+                                        role="option">Розробка CRM систем</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <button type="submit" class="main-btn">
                         Замовити розробку
@@ -38,5 +70,24 @@
                 </div>
             </fieldset>
         </form>
+        <div class="modal__wrapper modal__wrapper-success">
+            <div class="modal success">
+                <div class="modal__title"><span>Заявку успішно прийнято!</span></div>
+                <div class="modal__body">
+                    <p class="modal__body-text">Дякуємо за довіру! Ми обов’язково обробимо заявку і зв’яжемось з вами
+                        найближчим часом</p>
+                </div>
+                <button class="modal__close">Зрозуміло</button>
+            </div>
+        </div>
+        <div class="modal__wrapper modal__wrapper-error">
+            <div class="modal error">
+                <div class="modal__title"><span>Спробуйте ще раз.</span></div>
+                <div class="modal__body">
+                    <p class="modal__body-text">Щось пішло не так. Будь ласка, спробуйте відправити дані ще раз.</p>
+                </div>
+                <button class="modal__close">Спробувати знову</button>
+            </div>
+        </div>
     </div>
 </section>
